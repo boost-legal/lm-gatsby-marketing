@@ -1,3 +1,5 @@
+const targetAddress = new URL(`https://www.lawmatics.com`);
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -32,8 +34,14 @@ module.exports = {
       options: {
         bucketName: "lm-gatsby-marketing",
         protocol: "https",
-        hostname: "www.lawmatics.com",
+        hostname: targetAddress.href,
       },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: targetAddress.href.slice(0, -1),
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
