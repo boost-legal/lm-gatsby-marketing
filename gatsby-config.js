@@ -31,6 +31,8 @@ module.exports = {
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: "lm-gatsby-marketing",
+        protocol: "https",
+        hostname: "www.lawmatics.com",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
