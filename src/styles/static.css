@@ -4,6 +4,7 @@
   font-family: "booster";
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Regular.eot");
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Regular.eot?#iefix") format("embedded-opentype"),
   url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Regular.woff2") format("woff2"),
@@ -14,6 +15,7 @@
   font-family: "booster";
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Italic.eot");
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Italic.eot?#iefix") format("embedded-opentype"),
   url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Italic.woff2") format("woff2"),
@@ -24,6 +26,7 @@
   font-family: "booster";
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Bold.eot");
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Bold.eot?#iefix") format("embedded-opentype"),
   url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Bold.woff2") format("woff2"),
@@ -34,6 +37,7 @@
   font-family: "booster";
   font-weight: bold;
   font-style: italic;
+  font-display: swap;
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-BoldItalic.eot");
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-BoldItalic.eot?#iefix") format("embedded-opentype"),
   url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-BoldItalic.woff2") format("woff2"),
@@ -44,6 +48,7 @@
   font-family: "booster";
   font-weight: 800;
   font-style: normal;
+  font-display: swap;
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-ExtraBold.eot");
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-ExtraBold.eot?#iefix") format("embedded-opentype"),
   url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-ExtraBold.woff2") format("woff2"),
@@ -54,6 +59,7 @@
   font-family: "booster serif";
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/boosterserif.eot");
   src: url("https://boost-static-assets.s3.amazonaws.com/fonts/boosterserif.eot?#iefix") format("embedded-opentype"),
   url("https://boost-static-assets.s3.amazonaws.com/fonts/boosterserif.woff2") format("woff2"),
@@ -64,6 +70,7 @@
   font-family: "boosticons";
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
   src: url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.eot?ht6ldm");
   src: url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.eot?ht6ldm#iefix") format("embedded-opentype"),
   url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.woff?ht6ldm") format("woff"),
