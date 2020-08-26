@@ -2,9 +2,9 @@ const targetAddress = new URL(`https://www.lawmatics.com`);
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Lawmatics`,
+    description: `Engage > Convert > Nurture > Grow your law firm with the most powerful Client Intake and Marketing Automation Platform built for the modern practice`,
+    author: `@lawmatics`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

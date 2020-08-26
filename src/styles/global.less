@@ -13,13 +13,56 @@ b {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body {
+  font-size: 16px;
+  color: @boost-secondary;
+  background-color: #fff;
+  line-height: 1.4em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: @boost-secondary;
   font-family: "booster serif", serif;
+  padding-bottom: 10px;
+  line-height: 1em;
+  font-weight: 500
+}
+
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
+  color: inherit
+}
+
+h1 {
+  font-size: 30px
+}
+
+h2 {
+  font-size: 26px
+}
+
+h3 {
+  font-size: 22px
+}
+
+h4 {
+  font-size: 18px
+}
+
+h5 {
+  font-size: 16px
+}
+
+h6 {
+  font-size: 14px
+}
+
+a {
+  opacity: 1;
+  color: @boost-primary;
+  transition: opacity .2s ease-in-out;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 button {

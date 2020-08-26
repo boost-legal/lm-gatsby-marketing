@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="" customTitle="Lawmatics - Cloud Based Intake and Marketing Automation for Law Firms" />
     <h1>Hi people</h1>
     <p className="text-boost-primary">Welcome to Lawmatics<i className="icon-logo"/></p>
     <p>Now go build something great.</p>
