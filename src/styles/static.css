@@ -1,0 +1,391 @@
+/*FONTS*/
+
+@font-face {
+  font-family: "booster";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Regular.eot");
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Regular.eot?#iefix") format("embedded-opentype"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Regular.woff2") format("woff2"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "booster";
+  font-weight: normal;
+  font-style: italic;
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Italic.eot");
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Italic.eot?#iefix") format("embedded-opentype"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Italic.woff2") format("woff2"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "booster";
+  font-weight: bold;
+  font-style: normal;
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Bold.eot");
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Bold.eot?#iefix") format("embedded-opentype"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Bold.woff2") format("woff2"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "booster";
+  font-weight: bold;
+  font-style: italic;
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-BoldItalic.eot");
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-BoldItalic.eot?#iefix") format("embedded-opentype"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-BoldItalic.woff2") format("woff2"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "booster";
+  font-weight: 800;
+  font-style: normal;
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-ExtraBold.eot");
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-ExtraBold.eot?#iefix") format("embedded-opentype"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-ExtraBold.woff2") format("woff2"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-ExtraBold.woff") format("woff");
+}
+
+@font-face{
+  font-family: "booster serif";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/boosterserif.eot");
+  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/boosterserif.eot?#iefix") format("embedded-opentype"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/boosterserif.woff2") format("woff2"),
+  url("https://boost-static-assets.s3.amazonaws.com/fonts/boosterserif.woff") format("woff");
+}
+
+@font-face {
+  font-family: "boosticons";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.eot?ht6ldm");
+  src: url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.eot?ht6ldm#iefix") format("embedded-opentype"),
+  url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.woff?ht6ldm") format("woff"),
+  url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.ttf?ht6ldm") format("truetype"),
+  url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.svg?ht6ldm#boosticons") format("svg");
+}
+
+.booster {
+  font-family: "booster", sans-serif;
+}
+
+.booster-serif {
+  font-family: "booster serif", serif;
+}
+
+.boosticon {
+  font-family: "boosticons";
+}
+
+/* BOOST ICONS */
+
+.icon-add-contact:before {
+  content: "\e901";
+}
+.icon-prospects:before {
+  content: "\e913";
+}
+.icon-contacts:before {
+  content: "\e90b";
+}
+.icon-dashboard:before {
+  content: "\e90c";
+}
+.icon-forms:before {
+  content: "\e90f";
+}
+.icon-marketing:before {
+  content: "\e910";
+}
+.icon-analytics:before {
+  content: "\e902";
+}
+.icon-docs:before {
+  content: "\e90d";
+}
+.icon-settings:before {
+  content: "\e915";
+}
+.icon-arrow-down:before {
+  content: "\e903";
+}
+.icon-arrow-left:before {
+  content: "\e904";
+}
+.icon-arrow-right:before {
+  content: "\e905";
+}
+.icon-arrow-up:before {
+  content: "\e906";
+}
+.icon-arrow-updown:before {
+  content: "\e907";
+}
+.icon-chevron-left:before {
+  content: "\e909";
+}
+.icon-chevron-right:before {
+  content: "\e90a";
+}
+.icon-search:before {
+  content: "\e914";
+}
+.icon-etc:before {
+  content: "\e90e";
+}
+.icon-minus:before {
+  content: "\e911";
+}
+.icon-plus:before {
+  content: "\e912";
+}
+.icon-checkmark:before {
+  content: "\e908";
+}
+.icon-warning-circle:before {
+  content: "\e916";
+}
+.icon-warning:before {
+  content: "\e917";
+}
+.icon-calendar:before {
+  content: "\e918";
+}
+.icon-edit:before {
+  content: "\e919";
+}
+.icon-exit:before {
+  content: "\e900";
+}
+.icon-drag-handle:before {
+  content: "\e91a";
+}
+.icon-resize-handle:before {
+  content: "\e91b";
+}
+.icon-list:before {
+  content: "\e91c";
+}
+.icon-pipeline:before {
+  content: "\e91d";
+}
+.icon-user:before {
+  content: "\e91e";
+}
+.icon-share:before {
+  content: "\e91f";
+}
+.icon-filter:before {
+  content: "\e920";
+}
+.icon-automation:before {
+  content: "\e921";
+}
+.icon-archive:before {
+  content: "\e922";
+}
+.icon-save:before {
+  content: "\e923";
+}
+.icon-open:before {
+  content: "\e924";
+}
+.icon-logo:before {
+  content: "\e925";
+}
+.icon-leave:before {
+  content: "\e926";
+}
+.icon-branch:before {
+  content: "\e927";
+}
+.icon-enter:before {
+  content: "\e928";
+}
+.icon-email:before {
+  content: "\e929";
+}
+.icon-delay:before {
+  content: "\e92a";
+}
+.icon-duplicate:before {
+  content: "\e92b";
+}
+.icon-stats:before {
+  content: "\e92c";
+}
+.icon-trash:before {
+  content: "\e92d";
+}
+.icon-layout:before {
+  content: "\e92e";
+}
+.icon-template:before {
+  content: "\e92f";
+}
+.icon-coin:before {
+  content: "\e930";
+}
+.icon-note:before {
+  content: "\e931";
+}
+.icon-preview:before {
+  content: "\e932";
+}
+.icon-circleback:before {
+  content: "\e933";
+}
+.icon-double-chevron-right:before {
+  content: "\e934";
+}
+.icon-double-chevron-left:before {
+  content: "\e935";
+}
+.icon-add-note:before {
+  content: "\e936";
+}
+.icon-esignature:before {
+  content: "\e937";
+}
+.icon-clients:before {
+  content: "\e938";
+}
+.icon-reporting:before {
+  content: "\e939";
+}
+.icon-change-attribute:before {
+  content: "\e93a";
+}
+.icon-colorpicker:before {
+  content: "\e93b";
+}
+.icon-audiences:before {
+  content: "\e93c";
+}
+.icon-phone:before {
+  content: "\e93d";
+}
+.icon-companies:before {
+  content: "\e93e";
+}
+.icon-meeting:before {
+  content: "\e93f";
+}
+.icon-sms:before {
+  content: "\e940";
+}
+.icon-social:before {
+  content: "\e941";
+}
+.icon-deadline:before {
+  content: "\e942";
+}
+.icon-calendar-request:before {
+  content: "\e943";
+}
+.icon-sound:before {
+  content: "\e944";
+}
+.icon-play:before {
+  content: "\e945";
+}
+.icon-stop:before {
+  content: "\e946";
+}
+.icon-pause:before {
+  content: "\e947";
+}
+.icon-tasks:before {
+  content: "\e948";
+}
+.icon-add-firm:before {
+  content: "\e949";
+}
+.icon-code:before {
+  content: "\e94a";
+}
+.icon-help:before {
+  content: "\e94b";
+}
+.icon-help-circle:before {
+  content: "\e94c";
+}
+.icon-relationship:before {
+  content: "\e94d";
+}
+.icon-switch:before {
+  content: "\e94e";
+}
+
+i {
+  font-family: "boosticons" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* TAILWIND */
+
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/base.css
+ */
+@import "tailwindcss/base";
+
+/**
+ * This injects any component classes registered by plugins.
+ */
+@import "tailwindcss/components";
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ */
+@import "tailwindcss/utilities";
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */

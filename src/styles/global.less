@@ -1,14 +1,25 @@
 @import (reference) "./variables.less";
 
-html {
-  padding: 0;
-  border: 0;
+html,
+body,
+p,
+span,
+em,
+strong,
+i,
+b {
   font-family: "booster", system-ui, sans-serif;
-  font-size: 16px;
-  outline: none;
   -webkit-font-smoothing: antialiased;
-  color: @boost-secondary;
-  overflow: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "booster serif", serif;
 }
 
 button {
@@ -28,7 +39,9 @@ button {
 }
 
 input,
-optgroup,
+input:focus,
+textarea:focus,
+select:focus optgroup,
 select,
 textarea,
 .link:focus,
@@ -67,4 +80,18 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .br3 {
   border-radius: 3px;
+}
+
+.noflick {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
