@@ -23,7 +23,7 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true, // Print removed selectors and processed file names
-        develop: true, // Enable while using `gatsby develop`
+        // develop: true, // Enable while using `gatsby develop`
         tailwind: true, // Enable tailwindcss support
         // whitelist: ['whitelist'], // Don't remove this selector
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
@@ -33,20 +33,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `lawmatics`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#FFFFFF`,
+        theme_color: `#FF8800`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/lawmatics-mark.png`,
       },
     },
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "lm-gatsby-marketing",
-        protocol: "https",
+        bucketName: `lm-gatsby-marketing`,
+        protocol: `https`,
         hostname: targetAddress.href,
       },
     },
