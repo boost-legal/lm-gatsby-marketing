@@ -35,7 +35,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id E1EFSXD62AD167 --paths \"/*\""
+    "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id E8AGR0GQS22LF --paths \"/*\""
   },
   "repository": {
     "type": "git",
