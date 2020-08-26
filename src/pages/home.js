@@ -1,22 +1,46 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+
+const IndexPage = (props) => (
   <Layout>
     <SEO title="" customTitle="Lawmatics - Cloud Based Intake and Marketing Automation for Law Firms" />
-    <h1>Hi people</h1>
-    <p className="text-boost-primary">Welcome to Lawmatics<i className="icon-logo"/></p>
-    <p>Now go build something great.</p>
-    <div className="w-32">
-      <Image />
+    <h1>Heading One</h1>
+    <p>Text</p>
+    <div className="w-full flex flex-fluid-img">
+        <Img fluid={props.data.imageOne.childImageSharp.fluid} alt="One" />
+        <Img fluid={props.data.imageTwo.childImageSharp.fluid} alt="Two" />
+        <Img fluid={props.data.imageThree.childImageSharp.fluid} alt="Three" />
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    
   </Layout>
 )
 
 export default IndexPage
+
+export const fluidImage = graphql`
+fragment fluidImage on File {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid_tracedSVG
+    }
+  }
+}
+`;
+export const pageQuery = graphql`
+  query {
+    imageOne: file(relativePath: { eq: "home/one.jpg" }) {
+      ...fluidImage
+    }
+    imageTwo: file(relativePath: { eq: "home/two.jpg" }) {
+      ...fluidImage
+    }
+    imageThree: file(relativePath: { eq: "home/three.jpg" }) {
+      ...fluidImage
+    }
+  }
+`;
