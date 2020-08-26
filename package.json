@@ -10,6 +10,7 @@
     "gatsby-plugin-canonical-urls": "^2.3.10",
     "gatsby-plugin-manifest": "^2.4.24",
     "gatsby-plugin-offline": "^3.2.24",
+    "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-s3": "^0.3.5",
     "gatsby-plugin-sharp": "^2.6.28",
@@ -21,7 +22,8 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "tailwindcss": "^1.7.3"
   },
   "license": "0BSD",
   "scripts": {
