@@ -1,0 +1,70 @@
+@import (reference) "./variables.less";
+
+html {
+  padding: 0;
+  border: 0;
+  font-family: "booster", system-ui, sans-serif;
+  font-size: 16px;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  color: @boost-secondary;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  overflow: hidden;
+  outline: none;
+  color: inherit;
+  font-family: "booster", system-ui, sans-serif;
+  line-height: inherit;
+  font-size: inherit;
+  margin: 0;
+  -webkit-appearance: none;
+  padding: 0;
+}
+
+input,
+optgroup,
+select,
+textarea,
+.link:focus,
+:focus,
+img {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-input-placeholder,
+::placeholder {
+  color: @boost-secondary-50;
+  opacity: 1;
+  font-weight: normal;
+  font-style: normal;
+}
+:-ms-input-placeholder,
+::-ms-input-placeholder {
+  color: @boost-secondary-50;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.br3 {
+  border-radius: 3px;
+}
