@@ -1,5 +1,7 @@
 @import (reference) "./variables.less";
 
+/* GLOBALS */
+
 html,
 body,
 p,
@@ -9,8 +11,13 @@ strong,
 i,
 b {
   font-family: "booster", system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "pnum";
+  font-feature-settings: "pnum";
+  font-variant-numeric: proportional-nums;
 }
 
 body {
@@ -20,46 +27,57 @@ body {
   line-height: 1.4em;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: @boost-secondary;
   font-family: "booster serif", serif;
-  padding-bottom: 10px;
   line-height: 1em;
-  font-weight: 500
-}
-
-h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
-  color: inherit
+  font-weight: 500;
+  margin-bottom: 1.45rem;
+  text-rendering: optimizeLegibility;
+  
+  & a {
+    color: inherit;
+  }
 }
 
 h1 {
-  font-size: 30px
+  font-size: 2rem;
+  line-height: 2.9rem;
 }
-
 h2 {
-  font-size: 26px
+  font-size: 1.51572rem;
+  line-height: 2.175rem;
 }
-
 h3 {
-  font-size: 22px
+  font-size: 1.31951rem;
+  line-height: 2.175rem;
 }
-
 h4 {
-  font-size: 18px
+  font-size: 1rem;
+  line-height: 1.45rem;
 }
-
 h5 {
-  font-size: 16px
+  font-size: 0.87055rem;
+  line-height: 1.45rem;
+}
+h6 {
+  font-size: 0.81225rem;
+  line-height: 1.45rem;
 }
 
-h6 {
-  font-size: 14px
+p {
+  margin-bottom: 1.45rem;
 }
 
 a {
   opacity: 1;
   color: @boost-primary;
-  transition: opacity .2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   &:hover {
     opacity: 0.8;
   }
@@ -80,6 +98,8 @@ button {
   -webkit-appearance: none;
   padding: 0;
 }
+
+/* GLOBAL RESETS */
 
 input,
 input:focus,
@@ -121,6 +141,8 @@ img {
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
+/* GLOBAL HELPERS */
 
 .br3 {
   border-radius: 3px;
