@@ -4,17 +4,15 @@ import posed, { PoseGroup } from 'react-pose';
 
 class Transition extends PureComponent {
   render() {
-    const { children, location } = this.props;
+    const { children, location, animateOnMount } = this.props;
 
     const RoutesContainer = posed.div({
       enter: { opacity: 1, delay: 250, delayChildren: 250 },
       exit: { opacity: 0 },
     });
 
-    // To enable page transitions on mount / initial load,
-    // use the prop `animateOnMount={true}` on `PoseGroup`.
     return (
-      <PoseGroup>
+      <PoseGroup animateOnMount={animateOnMount}>
         <RoutesContainer key={location.pathname}>{children}</RoutesContainer>
       </PoseGroup>
     );
@@ -24,6 +22,11 @@ class Transition extends PureComponent {
 Transition.propTypes = {
   children: PropTypes.node.isRequired,
   location: PropTypes.object.isRequired,
+  animateOnMount: PropTypes.bool,
 };
+
+Transition.defaultProps = {
+  animateOnMount: false,
+}
 
 export default Transition;

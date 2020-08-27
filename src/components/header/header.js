@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import posed from 'react-pose';
 
 import Nav from './nav';
+import Logo from "../../images/lawmatics-preloader.svg";
 
 // Example of a component-specific page transition
 const AnimatedContainer = posed.div({
@@ -25,7 +26,7 @@ const Header = ({ title }) => (
   <AnimatedContainer>
     <div>
       <Link to="/">
-        <h1>{title}</h1>
+        <Logo />
       </Link>
 
       <Nav />
