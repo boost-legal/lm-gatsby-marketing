@@ -18,7 +18,7 @@ const Anim = posed.span({
 
 const IndexPage = (props) => (
   <Layout>
-    <SEO title="" customTitle="Lawmatics - Cloud Based Intake and Marketing Automation for Law Firms" />
+    <SEO title="Cloud Based Intake and Marketing Automation for Law Firms" />
     <AnimStagger>
       <Anim><h1>Heading One</h1></Anim>
       <Anim><h2>Heading Two</h2></Anim>

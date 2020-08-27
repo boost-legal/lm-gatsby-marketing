@@ -26,7 +26,7 @@ const Header = ({ title }) => (
   <AnimatedContainer>
     <div>
       <Link to="/">
-        <Logo />
+        <Logo className="w-48" />
       </Link>
 
       <Nav />
