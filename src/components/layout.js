@@ -20,6 +20,9 @@ const Layout = ({ children }) => {
         siteMetadata {
           title
         }
+        globalVariables {
+          siteWidth
+        }
       }
     }
   `)
@@ -30,7 +33,7 @@ const Layout = ({ children }) => {
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: data.site.globalVariables.siteWidth,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >

@@ -6,6 +6,9 @@ module.exports = {
     description: `Engage > Convert > Nurture > Grow your law firm with the most powerful Client Intake and Marketing Automation Platform built for the modern practice`,
     author: `@lawmatics`,
   },
+  globalVariables: {
+    siteWidth: 1280,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
