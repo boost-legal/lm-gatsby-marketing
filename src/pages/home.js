@@ -11,9 +11,9 @@ const AnimStagger = posed.div({
   enter: { staggerChildren: 100, delayChildren: 500 }
 });
 const Anim = posed.span({
-  init: { display: `block` },
+  init: { display: `block`, marginLeft: 50 },
   enter: { marginLeft: 0, opacity: 1 },
-  exit: { marginLeft: 50, opacity: 0 }
+  exit: { opacity: 0 },
 });
 
 const IndexPage = (props) => (
