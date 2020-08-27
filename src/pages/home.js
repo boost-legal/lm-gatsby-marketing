@@ -1,21 +1,33 @@
 import React from "react"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
+import posed from 'react-pose';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 
+const AnimStagger = posed.div({
+  enter: { staggerChildren: 100, delayChildren: 500 }
+});
+const Anim = posed.span({
+  init: { display: `block` },
+  enter: { marginLeft: 0, opacity: 1 },
+  exit: { marginLeft: 50, opacity: 0 }
+});
+
 const IndexPage = (props) => (
   <Layout>
     <SEO title="" customTitle="Lawmatics - Cloud Based Intake and Marketing Automation for Law Firms" />
-    <h1>Heading One</h1>
-    <h2>Heading Two</h2>
-    <h3>Heading Three</h3>
-    <h4>Heading Four</h4>
-    <h5>Heading Five</h5>
-    <h6>Heading Six</h6>
-    <p>Text</p>
+    <AnimStagger>
+      <Anim><h1>Heading One</h1></Anim>
+      <Anim><h2>Heading Two</h2></Anim>
+      <Anim><h3>Heading Three</h3></Anim>
+      <Anim><h4>Heading Four</h4></Anim>
+      <Anim><h5>Heading Five</h5></Anim>
+      <Anim><h6>Heading Six</h6></Anim>
+      <Anim><p>Text</p></Anim>
+    </AnimStagger>
     <div className="w-full flex flex-col lg:flex-row flex-fluid-img">
         <Img fluid={props.data.imageOne.childImageSharp.fluid} alt="One" title="One" />
         <Img fluid={props.data.imageTwo.childImageSharp.fluid} alt="Two" title="Two" />
