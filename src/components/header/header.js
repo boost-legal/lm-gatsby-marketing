@@ -24,12 +24,16 @@ const AnimatedContainer = posed.div({
 
 const Header = ({ title }) => (
   <AnimatedContainer>
-    <div>
-      <Link to="/">
-        <Logo className="w-48" />
-      </Link>
+    <div className="flex items-center justify-center w-full py-3 px-2 bg-white">
+      <div
+        className="flex items-center w-full justify-between"
+        style={{ maxWidth: 1280 }}>
+        <Link to="/">
+          <Logo className="w-48" />
+        </Link>
 
-      <Nav />
+        <Nav />
+      </div>
     </div>
   </AnimatedContainer>
 );
