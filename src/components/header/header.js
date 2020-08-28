@@ -6,7 +6,7 @@ import posed from 'react-pose';
 import Nav from './nav';
 import Logo from "../../images/lawmatics-logo.svg";
 
-// Example of a component-specific page transition
+
 const AnimatedContainer = posed.div({
   enter: {
     y: 0,

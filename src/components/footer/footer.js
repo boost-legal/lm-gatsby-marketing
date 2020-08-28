@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import posed from 'react-pose';
 
+
 const AnimatedContainer = posed.div({
   enter: {
     y: 0,

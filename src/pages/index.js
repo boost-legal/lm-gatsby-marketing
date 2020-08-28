@@ -2,6 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import Logo from "../images/lawmatics-preloader.svg";
 
+
 const IndexPage = () => (
   <div className="w-full h-screen flex flex-col items-center justify-center text-center">
     <SEO title="Under Development"/>
