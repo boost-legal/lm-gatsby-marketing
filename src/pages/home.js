@@ -27,6 +27,8 @@ const IndexPage = (props) => (
       <Anim><h5>Heading Five</h5></Anim>
       <Anim><h6>Heading Six</h6></Anim>
       <Anim><p>Text</p></Anim>
+      <Anim>Boost icon: <span className="boosticon icon-logo" /></Anim>
+      <Anim>Elegant icon: <span className="eleganticon icon_images" /></Anim>
     </AnimStagger>
     <div className="w-full flex flex-col lg:flex-row flex-fluid-img">
         <Img fluid={props.data.imageOne.childImageSharp.fluid} alt="One" title="One" />
