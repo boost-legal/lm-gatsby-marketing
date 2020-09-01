@@ -27,6 +27,10 @@ const NavItem = styled(Link)`
     }
   }
 
+  &.active {
+    ${tw`text-boost-primary`}
+  }
+
   @media (max-width: 768px) {
     ${tw`hover:bg-boost-secondary-10`}
     :after{ display: none; }
@@ -36,9 +40,9 @@ const NavItem = styled(Link)`
 const Nav = () => (
   <nav className="flex flex-col items-center justify-center md:flex-row
     w-full md:w-auto px-4 md:px-0">
-    <NavItem to="/home">Home</NavItem>
-    <NavItem to="/page-2">Page Two</NavItem>
-    <NavItem to="/404">404</NavItem>
+    <NavItem to="/home" activeClassName="active">Home</NavItem>
+    <NavItem to="/page-2" activeClassName="active">Page Two</NavItem>
+    <NavItem to="/404" activeClassName="active">404</NavItem>
   </nav>
 );
 
