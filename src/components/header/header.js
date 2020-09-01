@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { globalHistory } from '@reach/router';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import posed from 'react-pose';
 import styled from 'styled-components';
@@ -74,23 +73,8 @@ const Hamburger = styled.div`
 `
 
 const Header = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   
-  const toggleState = ({ props }) => {
-    let status
-    if (props) status = props.status
-    else status = !navbarOpen
-    setNavbarOpen(status)
-  }
-
-  useEffect(() => {
-    return globalHistory.listen(({ action }) => {
-      if (action === 'PUSH') {
-        toggleState({ status: false });
-      }
-    })
-  });
-
   return (
     <AnimatedContainer>
       <div className="w-full flex justify-center">
@@ -103,13 +87,13 @@ const Header = () => {
               <Logo className="w-48" />
             </Link>
             <Toggle
-              onClick={toggleState}>
-              <Hamburger open={navbarOpen ? false : true} />
+              isOpen={isOpen}
+              onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? <Hamburger open /> : <Hamburger />}
             </Toggle>
           </div>
-          <Navbox open={navbarOpen ? true : false}>
-            <Nav />
-          </Navbox>
+          {isOpen ?
+          <Navbox><Nav /></Navbox> : <Navbox open><Nav /></Navbox>}
         </div>
       </div>
     </AnimatedContainer>)
