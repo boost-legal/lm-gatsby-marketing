@@ -1,7 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import { globalHistory } from '@reach/router';
 import { Link } from 'gatsby';
 import posed from 'react-pose';
+import styled from 'styled-components';
+import tw from 'tailwind.macro';
 
 import Nav from './nav';
 import Logo from "../../images/lawmatics-logo.svg";
@@ -15,31 +17,102 @@ const AnimatedContainer = posed.div({
     },
   },
   exit: {
-    y: '-100%',
+    y: '-100px',
     transition: {
       ease: 'easeInOut',
     },
   },
 });
 
-const Header = ({ title }) => (
-  <AnimatedContainer>
-    <div className="flex items-center justify-center w-full py-3 px-2 bg-white">
-      <div
-        className="flex items-center w-full justify-between"
-        style={{ maxWidth: 1280 }}>
-        <Link to="/">
-          <Logo className="w-48" />
-        </Link>
+const Toggle = styled.div`
+  height: 30px;
+  ${tw`flex md:hidden cursor-pointer px-2`}
+`
 
-        <Nav />
+const Navbox = styled.div`
+  ${tw`flex items-center justify-end`}
+
+  @media (max-width: 768px) {
+    ${tw`bg-boost-secondary-05 py-8 w-full fixed flex-col left-0 z-1 border-t-4 shadow-xl`}
+    transition: all 0.3s ease-in-out;
+    top: ${props => (props.open ? "-300px" : "80px")};
+  }
+`
+
+const Hamburger = styled.div`
+  ${tw`bg-boost-secondary-70`}
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
+  transition: all .3s linear;
+  align-self: center;
+  position: relative;
+  transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+
+  ::before,
+  ::after {
+    width: 30px;
+    height: 3px;
+    border-radius: 3px;
+    ${tw`bg-boost-secondary-70`}
+    content: "";
+    position: absolute;
+    transition: all 0.3s linear;
+  }
+
+  ::before {
+    transform: ${props =>
+      props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
+    top: -10px;
+  }
+
+  ::after {
+    opacity: ${props => (props.open ? "0" : "1")};
+    transform: ${props => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
+    top: 10px;
+  }
+`
+
+const Header = () => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  
+  const toggleState = ({ props }) => {
+    let status
+    if (props) status = props.status
+    else status = !navbarOpen
+    setNavbarOpen(status)
+  }
+
+  useEffect(() => {
+    return globalHistory.listen(({ action }) => {
+      if (action === 'PUSH') {
+        toggleState({ status: false });
+      }
+    })
+  });
+
+  return (
+    <AnimatedContainer>
+      <div className="w-full flex justify-center">
+        <div className="flex items-center justify-between w-full
+          pa-0 md:py-3 md:px-2 bg-white fixed z-10"
+          style={{ maxWidth: 1280 }}>
+          <div className="bg-white w-full md:w-auto z-10
+            flex items-center justify-between py-3 px-2 md:py-0 md:px-0">
+            <Link to="/">
+              <Logo className="w-48" />
+            </Link>
+            <Toggle
+              onClick={toggleState}>
+              <Hamburger open={navbarOpen ? false : true} />
+            </Toggle>
+          </div>
+          <Navbox open={navbarOpen ? true : false}>
+            <Nav />
+          </Navbox>
+        </div>
       </div>
-    </div>
-  </AnimatedContainer>
-);
-
-Header.propTypes = {
-  title: PropTypes.string.isRequired,
+    </AnimatedContainer>)
 };
 
 export default Header;
