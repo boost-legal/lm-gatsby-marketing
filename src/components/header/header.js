@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 import Nav from './nav';
-import Logo from "../../images/lawmatics-logo.svg";
+import Logo from "../../assets/images/lawmatics-logo.svg";
 
 
 const AnimatedContainer = posed.div({

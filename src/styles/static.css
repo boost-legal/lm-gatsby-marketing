@@ -5,10 +5,10 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Regular.eot");
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Regular.eot?#iefix") format("embedded-opentype"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Regular.woff2") format("woff2"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Regular.woff") format("woff");
+  src: url("/fonts/booster-Regular.eot");
+  src: url("/fonts/booster-Regular.eot?#iefix") format("embedded-opentype"),
+  url("/fonts/booster-Regular.woff2") format("woff2"),
+  url("/fonts/booster-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -16,10 +16,10 @@
   font-weight: normal;
   font-style: italic;
   font-display: swap;
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Italic.eot");
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Italic.eot?#iefix") format("embedded-opentype"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Italic.woff2") format("woff2"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Italic.woff") format("woff");
+  src: url("/fonts/booster-Italic.eot");
+  src: url("/fonts/booster-Italic.eot?#iefix") format("embedded-opentype"),
+  url("/fonts/booster-Italic.woff2") format("woff2"),
+  url("/fonts/booster-Italic.woff") format("woff");
 }
 
 @font-face {
@@ -27,10 +27,10 @@
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Bold.eot");
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Bold.eot?#iefix") format("embedded-opentype"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Bold.woff2") format("woff2"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-Bold.woff") format("woff");
+  src: url("/fonts/booster-Bold.eot");
+  src: url("/fonts/booster-Bold.eot?#iefix") format("embedded-opentype"),
+  url("/fonts/booster-Bold.woff2") format("woff2"),
+  url("/fonts/booster-Bold.woff") format("woff");
 }
 
 @font-face {
@@ -38,10 +38,10 @@
   font-weight: bold;
   font-style: italic;
   font-display: swap;
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-BoldItalic.eot");
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-BoldItalic.eot?#iefix") format("embedded-opentype"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-BoldItalic.woff2") format("woff2"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-BoldItalic.woff") format("woff");
+  src: url("/fonts/booster-BoldItalic.eot");
+  src: url("/fonts/booster-BoldItalic.eot?#iefix") format("embedded-opentype"),
+  url("/fonts/booster-BoldItalic.woff2") format("woff2"),
+  url("/fonts/booster-BoldItalic.woff") format("woff");
 }
 
 @font-face {
@@ -49,10 +49,10 @@
   font-weight: 800;
   font-style: normal;
   font-display: swap;
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-ExtraBold.eot");
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-ExtraBold.eot?#iefix") format("embedded-opentype"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-ExtraBold.woff2") format("woff2"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/booster-ExtraBold.woff") format("woff");
+  src: url("/fonts/booster-ExtraBold.eot");
+  src: url("/fonts/booster-ExtraBold.eot?#iefix") format("embedded-opentype"),
+  url("/fonts/booster-ExtraBold.woff2") format("woff2"),
+  url("/fonts/booster-ExtraBold.woff") format("woff");
 }
 
 @font-face{
@@ -60,10 +60,10 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/boosterserif.eot");
-  src: url("https://boost-static-assets.s3.amazonaws.com/fonts/boosterserif.eot?#iefix") format("embedded-opentype"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/boosterserif.woff2") format("woff2"),
-  url("https://boost-static-assets.s3.amazonaws.com/fonts/boosterserif.woff") format("woff");
+  src: url("/fonts/boosterserif.eot");
+  src: url("/fonts/boosterserif.eot?#iefix") format("embedded-opentype"),
+  url("/fonts/boosterserif.woff2") format("woff2"),
+  url("/fonts/boosterserif.woff") format("woff");
 }
 
 @font-face {
@@ -71,23 +71,23 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.eot?ht6ldm");
-  src: url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.eot?ht6ldm#iefix") format("embedded-opentype"),
-  url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.woff?ht6ldm") format("woff"),
-  url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.ttf?ht6ldm") format("truetype"),
-  url("https://boost-static-assets.s3.amazonaws.com/icons/boosticons.svg?ht6ldm#boosticons") format("svg");
-}
+  src: url("/fonts/boosticons.eot?ht6ldm");
+  src: url("/fonts/boosticons.eot?ht6ldm#iefix") format("embedded-opentype"),
+  url("/fonts/boosticons.woff?ht6ldm") format("woff"),
+  url("/fonts/boosticons.ttf?ht6ldm") format("truetype"),
+  url("/fonts/boosticons.svg?ht6ldm#boosticons") format("svg");
+} 
 
 @font-face {
   font-family: "ElegantIcons";
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url("https://boost-static-assets.s3.amazonaws.com/icons/ElegantIcons.eot");
-  src: url("https://boost-static-assets.s3.amazonaws.com/icons/ElegantIcons.eot#iefix") format("embedded-opentype"),
-  url("https://boost-static-assets.s3.amazonaws.com/icons/ElegantIcons.woff") format("woff"),
-  url("https://boost-static-assets.s3.amazonaws.com/icons/ElegantIcons.ttf") format("truetype"),
-  url("https://boost-static-assets.s3.amazonaws.com/icons/ElegantIcons.svg#boosticons") format("svg");
+  src: url("/fonts/ElegantIcons.eot");
+  src: url("/fonts/ElegantIcons.eot#iefix") format("embedded-opentype"),
+  url("/fonts/ElegantIcons.woff") format("woff"),
+  url("/fonts/ElegantIcons.ttf") format("truetype"),
+  url("/fonts/ElegantIcons.svg#boosticons") format("svg");
 }
 
 .booster {

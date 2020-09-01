@@ -3,8 +3,10 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import posed from 'react-pose';
 
+import parrot from "../../assets/images/parrot.gif"
+
 const Parrot = styled.span`
-  background-image: url(//boost-static-assets.s3.amazonaws.com/images/parrot.gif);
+  background-image: url(${parrot});
   background-size: contain;
   width: 16px;
   height: 16px;

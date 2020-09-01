@@ -13,7 +13,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -39,7 +39,7 @@ module.exports = {
         background_color: `#FFFFFF`,
         theme_color: `#FF8800`,
         display: `minimal-ui`,
-        icon: `src/images/lawmatics-mark.png`,
+        icon: `src/assets/images/lawmatics-mark.png`,
       },
     },
     {

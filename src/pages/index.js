@@ -1,6 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
-import Logo from "../images/lawmatics-preloader.svg";
+import Logo from "../assets/images/lawmatics-preloader.svg";
 
 
 const IndexPage = () => (
