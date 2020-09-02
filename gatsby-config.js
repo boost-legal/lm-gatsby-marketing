@@ -5,7 +5,7 @@ module.exports = {
     title: `Lawmatics`,
     description: `Engage > Convert > Nurture > Grow your law firm with the most powerful Client Intake and Marketing Automation Platform built for the modern practice`,
     author: `@lawmatics`,
-    siteWidth: 1280,
+    siteWidth: 1320,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -56,7 +56,7 @@ module.exports = {
         siteUrl: targetAddress.href.slice(0, -1),
       }
     },
-    `gatsby-plugin-react-svg`,
+    'gatsby-plugin-react-svg',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

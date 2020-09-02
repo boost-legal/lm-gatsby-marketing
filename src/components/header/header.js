@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 import Nav from './nav';
-import Logo from "../../assets/images/lawmatics-logo.svg";
+import Logo from "../../assets/svg/lawmatics-logo.svg";
 
 
 const AnimatedContainer = posed.div({
@@ -80,7 +80,7 @@ const Header = () => {
       <div className="w-full flex justify-center">
         <div className="flex items-center justify-between w-full
           pa-0 md:py-3 md:px-2 bg-white fixed z-10"
-          style={{ maxWidth: 1280 }}>
+          style={{ maxWidth: 1320 }}>
           <div className="bg-white w-full md:w-auto z-10
             flex items-center justify-between py-3 px-2 md:py-0 md:px-0">
             <Link to="/">

@@ -1,7 +1,7 @@
 import React from "react"
 import posed from 'react-pose';
 import SEO from "../components/seo"
-import Logo from "../assets/images/lawmatics-preloader.svg";
+import Logo from "../assets/svg/lawmatics-preloader.svg";
 
 
 const AnimStagger = posed.div({

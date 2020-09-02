@@ -65,7 +65,9 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    margin: ['responsive', 'hover'],
+  },
   plugins: [],
   future: {
     removeDeprecatedGapUtilities: true,
