@@ -34,7 +34,7 @@ const Footer = () => (
   <AnimatedContainer>
     <div className="w-full flex justify-center">
       <div className="flex items-center justify-between w-full
-        pa-0 md:py-3 md:px-2 bg-white fixed z-10"
+        pa-0 pb-4 md:py-3 md:px-2 bg-white z-10"
         style={{ maxWidth: 1280 }}>
         
         {/* Footnotes */}
