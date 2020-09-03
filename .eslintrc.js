@@ -6,7 +6,7 @@ const [_, ...restricted] = baseRules.rules['no-restricted-syntax'];
 module.exports = {
   extends: 'airbnb',
   parserOptions: {
-    ecmaVersion: 2017,
+    ecmaVersion: 2020,
     sourceType: 'module',
     jsx: true,
   },
