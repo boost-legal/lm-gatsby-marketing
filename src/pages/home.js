@@ -1,24 +1,23 @@
-import React from "react"
-import Img from "gatsby-image"
-import { graphql } from "gatsby"
+import React from 'react';
+import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
 import posed from 'react-pose';
 
-import Layout from "../components/layout"
-import Section from "../components/section"
-import SEO from "../components/seo"
-
+import Layout from '../components/layout';
+import Section from '../components/section';
+import SEO from '../components/seo';
 
 const AnimStagger = posed.div({
-  enter: { staggerChildren: 100, delayChildren: 500 }
+  enter: { staggerChildren: 100, delayChildren: 500 },
 });
 const Anim = posed.span({
-  init: { display: `block`, marginLeft: 50 },
+  init: { display: 'block', marginLeft: 50 },
   enter: { marginLeft: 0, opacity: 1 },
   exit: { opacity: 0 },
 });
 
-const IndexPage = (props) => (
-  <Layout noStyle maxWidth='100%'>
+const IndexPage = ({ data }) => (
+  <Layout noStyle maxWidth="100%">
     <SEO title="Cloud Based Intake and Marketing Automation for Law Firms" />
     <div className="w-full flex flex-col lg:flex-row flex-fluid-img">
       <Img fluid={props.data.heroImage.childImageSharp.fluid} alt="Engage Convert Nurture Grow" />
@@ -38,15 +37,15 @@ const IndexPage = (props) => (
     </Section>
     <Section>
       <div className="w-full flex flex-col lg:flex-row flex-fluid-img">
-        <Img fluid={props.data.imageOne.childImageSharp.fluid} alt="One" title="One" />
-        <Img fluid={props.data.imageTwo.childImageSharp.fluid} alt="Two" title="Two" />
-        <Img fluid={props.data.imageThree.childImageSharp.fluid} alt="Three" title="Three" />
+        <Img fluid={data.imageOne.childImageSharp.fluid} alt="One" title="One" />
+        <Img fluid={data.imageTwo.childImageSharp.fluid} alt="Two" title="Two" />
+        <Img fluid={data.imageThree.childImageSharp.fluid} alt="Three" title="Three" />
       </div>
     </Section>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
 
 export const fluidImage = graphql`
   fragment fluidImage on File {
