@@ -7,6 +7,7 @@ import tw from 'tailwind.macro';
 import Nav from './nav';
 import Logo from "../../assets/svg/lawmatics-logo.svg";
 
+const headerHeight = '80px';
 
 const AnimatedContainer = posed.div({
   enter: {
@@ -25,7 +26,7 @@ const AnimatedContainer = posed.div({
 
 const HeaderDiv = styled.div`
   max-width: 1320px; 
-  ${tw`flex items-center justify-between w-full py-0 px-0 bg-white fixed`}
+  ${tw`flex items-center justify-between w-full py-0 px-0`}
 
   @media (min-width: 945px) {
     ${tw`py-3 px-2`}
@@ -55,7 +56,7 @@ const Navbox = styled.div`
   @media (max-width: 945px) {
     ${tw`bg-boost-secondary-05 py-8 w-full fixed flex-col left-0 z-1 border-t-4 shadow-xl`}
     transition: all 0.3s ease-in-out;
-    top: ${props => (props.open ? "-600px" : "80px")};
+    top: ${props => (props.open ? "-600px" : headerHeight)};
   }
 `
 
@@ -93,28 +94,36 @@ const Hamburger = styled.div`
   }
 `
 
+const Buffer = styled.div`
+  width: 100%;
+  height: ${headerHeight};
+`
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   return (
-    <AnimatedContainer className="z-50 relative">
-      <div className="w-full flex justify-center">
-        <HeaderDiv>
-          <Togglebox>
-            <Link to="/">
-              <Logo className="w-48" />
-            </Link>
-            <Toggle
-              isOpen={isOpen}
-              onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <Hamburger open /> : <Hamburger />}
-            </Toggle>
-          </Togglebox>
-          {isOpen ?
-          <Navbox><Nav /></Navbox> : <Navbox open><Nav /></Navbox>}
-        </HeaderDiv>
-      </div>
-    </AnimatedContainer>)
+    <>
+      <AnimatedContainer className="z-50 relative">
+        <div className="w-full flex justify-center bg-white fixed">
+          <HeaderDiv>
+            <Togglebox>
+              <Link to="/">
+                <Logo className="w-48" />
+              </Link>
+              <Toggle
+                isOpen={isOpen}
+                onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? <Hamburger open /> : <Hamburger />}
+              </Toggle>
+            </Togglebox>
+            {isOpen ?
+            <Navbox><Nav /></Navbox> : <Navbox open><Nav /></Navbox>}
+          </HeaderDiv>
+        </div>
+      </AnimatedContainer>
+      <Buffer />
+    </>)
 };
 
 export default Header;
