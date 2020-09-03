@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import posed from 'react-pose';
 
-import Link from "../link"
+import Link from "../link";
 import Logo from "../../assets/svg/lawmatics-logo.svg";
 import parrot from "../../assets/images/parrot.gif"
 
@@ -59,16 +59,16 @@ const Footer = () => (
             </Link>
           </div>
           <div className="w-full md:w-3/5 py-10 md:py-0">
-            <div class="flex justify-center md:justify-between flex-wrap lg:pl-32
+            <div className="flex justify-center md:justify-between flex-wrap lg:pl-32
               text-sm text-boost-secondary-70">
-              <div class="flex flex-col w-1/3">
-                <LMLink to="/">Home</LMLink>
+              <div className="flex flex-col w-1/3">
+                <LMLink to="/home">Home</LMLink>
                 <LMLink to="/features">Features</LMLink>
                 <LMLink to="/integrations">Integrations</LMLink>
                 <LMLink to="/pricing">Pricing</LMLink>
                 <LMLink to="/blog">Blog</LMLink>
               </div>
-              <div class="flex flex-col w-1/3">
+              <div className="flex flex-col w-1/3">
                 <LMLink to="/contact">Contact</LMLink>
                 <LMLink to="/about-us">About Us</LMLink>
                 <LMLink
@@ -90,7 +90,7 @@ const Footer = () => (
                     System Status
                 </LMLink>
               </div>
-              <div class="flex flex-col w-1/3">
+              <div className="flex flex-col w-1/3">
                <LMLink to="/privacy-policy">Privacy policy</LMLink>
                <LMLink to="/terms-of-use">Terms of use</LMLink>
               </div>

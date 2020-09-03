@@ -23,18 +23,39 @@ const AnimatedContainer = posed.div({
   },
 });
 
+const HeaderDiv = styled.div`
+  max-width: 1320px; 
+  ${tw`flex items-center justify-between w-full py-0 px-0 bg-white fixed`}
+
+  @media (min-width: 945px) {
+    ${tw`py-3 px-2`}
+  }
+`
+
+const Togglebox = styled.div`
+  ${tw`bg-white w-full z-10 flex items-center justify-between py-3 px-2`}
+  
+  @media (min-width: 945px) {
+    ${tw`w-auto py-0 px-0`}
+  }
+`
+
 const Toggle = styled.div`
   height: 30px;
-  ${tw`flex md:hidden cursor-pointer px-2`}
+  ${tw`flex cursor-pointer px-2`}
+  
+  @media (min-width: 945px) {
+    ${tw`hidden`}
+  }
 `
 
 const Navbox = styled.div`
   ${tw`flex items-center justify-end`}
 
-  @media (max-width: 768px) {
+  @media (max-width: 945px) {
     ${tw`bg-boost-secondary-05 py-8 w-full fixed flex-col left-0 z-1 border-t-4 shadow-xl`}
     transition: all 0.3s ease-in-out;
-    top: ${props => (props.open ? "-300px" : "80px")};
+    top: ${props => (props.open ? "-600px" : "80px")};
   }
 `
 
@@ -76,13 +97,10 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   return (
-    <AnimatedContainer>
+    <AnimatedContainer className="z-50 relative">
       <div className="w-full flex justify-center">
-        <div className="flex items-center justify-between w-full
-          pa-0 md:py-3 md:px-2 bg-white fixed z-10"
-          style={{ maxWidth: 1320 }}>
-          <div className="bg-white w-full md:w-auto z-10
-            flex items-center justify-between py-3 px-2 md:py-0 md:px-0">
+        <HeaderDiv>
+          <Togglebox>
             <Link to="/">
               <Logo className="w-48" />
             </Link>
@@ -91,10 +109,10 @@ const Header = () => {
               onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <Hamburger open /> : <Hamburger />}
             </Toggle>
-          </div>
+          </Togglebox>
           {isOpen ?
           <Navbox><Nav /></Navbox> : <Navbox open><Nav /></Navbox>}
-        </div>
+        </HeaderDiv>
       </div>
     </AnimatedContainer>)
 };
