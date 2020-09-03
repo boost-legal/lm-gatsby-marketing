@@ -6,7 +6,7 @@ const [_, ...restricted] = baseRules.rules['no-restricted-syntax'];
 module.exports = {
   extends: 'airbnb',
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 2017,
     sourceType: 'module',
     jsx: true,
   },
@@ -43,6 +43,8 @@ module.exports = {
     'react/prefer-stateless-function': [2, { ignorePureComponents: true }],
     'react/no-multi-comp': 0,
     'react/jsx-closing-bracket-location': [1, 'after-props'],
+    'react/jsx-props-no-spreading': 0,
+    "react/jsx-one-expression-per-line": 0,
     'react/prop-types': [1, {
       ignore: [
         // `dispatch` is typically used by Redux `@connect`
