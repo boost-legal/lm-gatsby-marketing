@@ -33,6 +33,74 @@ const AnimatedContainer = posed.div({
   },
 });
 
+const FOOTER_CENTER_LINKS = [{
+  id: 'home',
+  to: '/home',
+}, {
+  id: 'features',
+  to: '/features',
+}, {
+  id: 'integrations',
+  to: '/integrations',
+}, {
+  id: 'pricing',
+  to: '/pricing',
+}, {
+  id: 'blog',
+  to: '/blog',
+}, {
+  id: 'contact',
+  to: '/contact',
+}, {
+  id: 'about-us',
+  to: '/about-us',
+}, {
+  id: 'help',
+  to: 'https://help.lawmatics.com',
+}, {
+  id: 'api-documentation',
+  to: 'https://docs.lawmatics.com',
+}, {
+  id: 'system-status',
+  to: 'http://status.lawmatics.com',
+}, {
+  id: 'privacy-policy',
+  to: '/privacy-policy',
+}, {
+  id: 'api-documentation',
+  to: 'https://docs.lawmatics.com',
+}, {
+  id: 'terms-of-use',
+  to: '/terms-of-use',
+}];
+
+const MAX_LINKS_PER_COL = 5;
+
+const NUM_COLUMNS = Math.ceil(FOOTER_CENTER_LINKS.length / MAX_LINKS_PER_COL);
+
+const renderLinkTitle = (id, title) => title || titleize(id.replace(/[-]+/g, ' '));
+
+const renderFooterLink = ({ to, id, title }) => (
+  <LMLink key={id} to={to} target={to.includes('http') ? '_blank' : ''}>
+    {renderLinkTitle(id, title)}
+  </LMLink>
+);
+
+// This function autobuckets link data to autoflow
+const bucketFooterLinks = () => FOOTER_CENTER_LINKS.reduce((acc, curr, idx) => {
+  const bucketIdx = Math.floor(idx / MAX_LINKS_PER_COL);
+  acc[bucketIdx] = [].concat((acc[bucketIdx] || []), curr);
+  return acc;
+}, []);
+
+const renderBucket = bucketLinks => (
+  <div className={`flex flex-col w-1/${NUM_COLUMNS}`}>
+    {bucketLinks.map(renderFooterLink)}
+  </div>
+);
+
+const renderFooterLinks = () => bucketFooterLinks().map(renderBucket);
+
 const LMLink = styled(Link)`
   transition: all 200ms ease-in;
   ${tw`text-boost-secondary-70 hover:text-boost-secondary hover:opacity-100
@@ -61,39 +129,7 @@ const Footer = () => (
           <div className="w-full md:w-3/5 py-10 md:py-0">
             <div className="flex justify-center md:justify-between flex-wrap lg:pl-32
               text-sm text-boost-secondary-70">
-              <div className="flex flex-col w-1/3">
-                <LMLink to="/home">Home</LMLink>
-                <LMLink to="/features">Features</LMLink>
-                <LMLink to="/integrations">Integrations</LMLink>
-                <LMLink to="/pricing">Pricing</LMLink>
-                <LMLink to="/blog">Blog</LMLink>
-              </div>
-              <div className="flex flex-col w-1/3">
-                <LMLink to="/contact">Contact</LMLink>
-                <LMLink to="/about-us">About Us</LMLink>
-                <LMLink
-                  to="https://help.lawmatics.com"
-                  target="_blank"
-                  rel="noreferrer">
-                    Help
-                </LMLink>
-                <LMLink
-                  to="https://docs.lawmatics.com"
-                  target="_blank"
-                  rel="noreferrer">
-                    API Documentation
-                </LMLink>
-                <LMLink
-                  to="http://status.lawmatics.com"
-                  target="_blank"
-                  rel="noreferrer">
-                    System Status
-                </LMLink>
-              </div>
-              <div className="flex flex-col w-1/3">
-               <LMLink to="/privacy-policy">Privacy policy</LMLink>
-               <LMLink to="/terms-of-use">Terms of use</LMLink>
-              </div>
+              {renderFooterLinks()}
             </div>
           </div>
           <div className="w-full md:w-1/5">
