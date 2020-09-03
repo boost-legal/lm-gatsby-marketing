@@ -1,9 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const FeaturesPage = () => (
   <Layout>
@@ -12,6 +11,6 @@ const FeaturesPage = () => (
     <p>Welcome to Features</p>
     <Link to="/home">Go back to the homepage</Link>
   </Layout>
-)
+);
 
-export default FeaturesPage
+export default FeaturesPage;

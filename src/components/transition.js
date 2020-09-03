@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import posed, { PoseGroup } from 'react-pose';
 
-
 class Transition extends PureComponent {
   render() {
     const { children, location, animateOnMount } = this.props;
@@ -28,6 +27,6 @@ Transition.propTypes = {
 
 Transition.defaultProps = {
   animateOnMount: false,
-}
+};
 
 export default Transition;
