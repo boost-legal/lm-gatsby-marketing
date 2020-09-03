@@ -28,7 +28,8 @@
     "react-helmet": "^6.1.0",
     "react-pose": "^4.0.10",
     "styled-components": "^5.1.1",
-    "tailwind.macro": "^1.0.0-alpha.10"
+    "tailwind.macro": "^1.0.0-alpha.10",
+    "titleize": "^2.1.0"
   },
   "devDependencies": {
     "prettier": "2.0.5",
