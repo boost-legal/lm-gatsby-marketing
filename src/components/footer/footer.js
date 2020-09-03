@@ -6,17 +6,7 @@ import titleize from 'titleize';
 
 import Link from '../link';
 import Logo from '../../assets/svg/lawmatics-logo.svg';
-import parrot from '../../assets/images/parrot.gif';
-
-const Parrot = styled.span`
-  background-image: url(${parrot});
-  background-size: contain;
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  margin-left: 5px;
-  margin-right: 3px;
-`;
+import Parrot from '../lawmatics/parrot';
 
 const AnimatedContainer = posed.div({
   enter: {
