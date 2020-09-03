@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-import Link from "../link";
-
+import Link from '../link';
 
 const NavItem = styled(Link)`
   transition: all 200ms ease-in;
@@ -36,7 +35,7 @@ const NavItem = styled(Link)`
     ${tw`hover:bg-boost-secondary-10`}
     :after{ display: none; }
   }
-`
+`;
 
 const Nav = () => (
   <nav className="flex flex-col items-center justify-center md:flex-row
@@ -51,7 +50,7 @@ const Nav = () => (
     <NavItem
       to="https://app.lawmatics.com"
       className="block md:hidden">
-        Login
+      Login
     </NavItem>
     {/* Desktop */}
     <Link
@@ -61,16 +60,16 @@ const Nav = () => (
       to="https://app.lawmatics.com"
       target="_blank"
       rel="noreferrer">
-        Login
+      Login
     </Link>
     <Link
-      className="text-boost-secondary hover:opacity-100 
+      className="text-boost-secondary hover:opacity-100
         bg-boost-warning hover:bg-boost-primary h-10 flex items-center justify-center
         py-2 px-3 rounded uppercase font-bold text-center text-xs mt-3 md:mt-0 md:ml-2
         transition-all ease-in duration-300 whitespace-no-wrap leading-none
         w-full md:w-auto"
       to="/demo">
-        Claim your free trial
+      Claim your free trial
     </Link>
   </nav>
 );

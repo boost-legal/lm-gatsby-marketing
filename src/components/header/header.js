@@ -5,8 +5,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 import Nav from './nav';
-import Logo from "../../assets/svg/lawmatics-logo.svg";
-
+import Logo from '../../assets/svg/lawmatics-logo.svg';
 
 const AnimatedContainer = posed.div({
   enter: {
@@ -30,7 +29,7 @@ const HeaderDiv = styled.div`
   @media (min-width: 945px) {
     ${tw`py-3 px-2`}
   }
-`
+`;
 
 const Togglebox = styled.div`
   ${tw`bg-white w-full z-10 flex items-center justify-between py-3 px-2`}
@@ -38,7 +37,7 @@ const Togglebox = styled.div`
   @media (min-width: 945px) {
     ${tw`w-auto py-0 px-0`}
   }
-`
+`;
 
 const Toggle = styled.div`
   height: 30px;
@@ -47,7 +46,7 @@ const Toggle = styled.div`
   @media (min-width: 945px) {
     ${tw`hidden`}
   }
-`
+`;
 
 const Navbox = styled.div`
   ${tw`flex items-center justify-end`}
@@ -55,9 +54,9 @@ const Navbox = styled.div`
   @media (max-width: 945px) {
     ${tw`bg-boost-secondary-05 py-8 w-full fixed flex-col left-0 z-1 border-t-4 shadow-xl`}
     transition: all 0.3s ease-in-out;
-    top: ${props => (props.open ? "-600px" : "80px")};
+    top: ${props => (props.open ? '-600px' : '80px')};
   }
-`
+`;
 
 const Hamburger = styled.div`
   ${tw`bg-boost-secondary-70`}
@@ -67,7 +66,7 @@ const Hamburger = styled.div`
   transition: all .3s linear;
   align-self: center;
   position: relative;
-  transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+  transform: ${props => (props.open ? 'rotate(-45deg)' : 'inherit')};
 
   ::before,
   ::after {
@@ -81,21 +80,20 @@ const Hamburger = styled.div`
   }
 
   ::before {
-    transform: ${props =>
-      props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
+    transform: ${props => (props.open ? 'rotate(-90deg) translate(-10px, 0px)' : 'rotate(0deg)')};
     top: -10px;
   }
 
   ::after {
-    opacity: ${props => (props.open ? "0" : "1")};
-    transform: ${props => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
+    opacity: ${props => (props.open ? '0' : '1')};
+    transform: ${props => (props.open ? 'rotate(90deg) ' : 'rotate(0deg)')};
     top: 10px;
   }
-`
+`;
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   return (
     <AnimatedContainer className="z-50 relative">
       <div className="w-full flex justify-center">
@@ -110,11 +108,12 @@ const Header = () => {
               {isOpen ? <Hamburger open /> : <Hamburger />}
             </Toggle>
           </Togglebox>
-          {isOpen ?
-          <Navbox><Nav /></Navbox> : <Navbox open><Nav /></Navbox>}
+          {isOpen
+            ? <Navbox><Nav /></Navbox> : <Navbox open><Nav /></Navbox>}
         </HeaderDiv>
       </div>
-    </AnimatedContainer>)
+    </AnimatedContainer>
+  );
 };
 
 export default Header;

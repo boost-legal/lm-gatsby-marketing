@@ -1,28 +1,28 @@
-const targetAddress = new URL(`https://www.lawmatics.com`);
+const targetAddress = new URL('https://www.lawmatics.com');
 
 module.exports = {
   siteMetadata: {
-    title: `Lawmatics`,
-    description: `Engage > Convert > Nurture > Grow your law firm with the most powerful Client Intake and Marketing Automation Platform built for the modern practice`,
-    author: `@lawmatics`,
+    title: 'Lawmatics',
+    description: 'Engage > Convert > Nurture > Grow your law firm with the most powerful Client Intake and Marketing Automation Platform built for the modern practice',
+    author: '@lawmatics',
     siteWidth: 1320,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-less`,
-    `gatsby-plugin-postcss`,
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-less',
+    'gatsby-plugin-postcss',
     'gatsby-plugin-react-svg',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/assets/images`,
       },
     },
     {
-      resolve: `gatsby-plugin-purgecss`,
+      resolve: 'gatsby-plugin-purgecss',
       options: {
         printRejected: true, // Print removed selectors and processed file names
         stages: ['develop'],
@@ -30,32 +30,32 @@ module.exports = {
         // whitelist: ['whitelist'], // Don't remove this selector
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
-      }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `lawmatics`,
-        start_url: `/`,
-        background_color: `#FFFFFF`,
-        theme_color: `#FF8800`,
-        display: `minimal-ui`,
-        icon: `src/assets/images/lawmatics-mark.png`,
       },
     },
     {
-      resolve: `gatsby-plugin-s3`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        bucketName: `lm-gatsby-marketing`,
-        protocol: `https`,
+        name: 'lawmatics',
+        start_url: '/',
+        background_color: '#FFFFFF',
+        theme_color: '#FF8800',
+        display: 'minimal-ui',
+        icon: 'src/assets/images/lawmatics-mark.png',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-s3',
+      options: {
+        bucketName: 'lm-gatsby-marketing',
+        protocol: 'https',
         hostname: targetAddress.href,
       },
     },
     {
-      resolve: `gatsby-plugin-canonical-urls`,
+      resolve: 'gatsby-plugin-canonical-urls',
       options: {
         siteUrl: targetAddress.href.slice(0, -1),
-      }
+      },
     },
     {
       resolve: 'gatsby-plugin-eslint',
@@ -65,12 +65,12 @@ module.exports = {
         stages: ['develop'],
         options: {
           emitWarning: true,
-          failOnError: false
-        }
-      }
-    }
+          failOnError: false,
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

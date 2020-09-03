@@ -1,9 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const BlogPage = () => (
   <Layout>
@@ -12,6 +11,6 @@ const BlogPage = () => (
     <p>Welcome to Blog</p>
     <Link to="/home">Go back to the homepage</Link>
   </Layout>
-)
+);
 
-export default BlogPage
+export default BlogPage;

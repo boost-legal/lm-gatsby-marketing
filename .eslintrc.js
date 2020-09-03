@@ -44,7 +44,7 @@ module.exports = {
     'react/no-multi-comp': 0,
     'react/jsx-closing-bracket-location': [1, 'after-props'],
     'react/jsx-props-no-spreading': 0,
-    "react/jsx-one-expression-per-line": 0,
+    'react/jsx-one-expression-per-line': 0,
     'react/prop-types': [1, {
       ignore: [
         // `dispatch` is typically used by Redux `@connect`

@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import posed from 'react-pose';
+import titleize from 'titleize';
 
-import Link from "../link";
-import Logo from "../../assets/svg/lawmatics-logo.svg";
-import parrot from "../../assets/images/parrot.gif"
-
+import Link from '../link';
+import Logo from '../../assets/svg/lawmatics-logo.svg';
+import parrot from '../../assets/images/parrot.gif';
 
 const Parrot = styled.span`
   background-image: url(${parrot});
@@ -16,7 +16,7 @@ const Parrot = styled.span`
   display: inline-block;
   margin-left: 5px;
   margin-right: 3px;
-`
+`;
 
 const AnimatedContainer = posed.div({
   enter: {
@@ -109,15 +109,16 @@ const LMLink = styled(Link)`
   &.active {
     ${tw`text-boost-primary`}
   }
-  `
+`;
 
 const Footer = () => (
   <AnimatedContainer>
     <div className="w-full flex justify-center">
-      <div className="flex flex-col items-center justify-between w-full
+      <div
+        className="flex flex-col items-center justify-between w-full
         pa-0 pb-20 md:py-16 md:px-2 bg-white z-10"
         style={{ maxWidth: 1320 }}>
-        
+
         {/* Footer Links */}
         <div className="flex flex-wrap justify-between w-full pb-10 md:pb-20 px-5 md:px-0">
           <div className="w-full md:w-1/5 flex justify-center md:justify-start">
@@ -136,16 +137,16 @@ const Footer = () => (
             <LMLink
               className="flex items-center justify-center w-full"
               to="/demo">
-                <div className="text-boost-secondary bg-boost-warning hover:bg-boost-primary
+              <div className="text-boost-secondary bg-boost-warning hover:bg-boost-primary
                   py-4 px-2 mb-2 rounded uppercase font-bold text-center text-xs cursor-pointer
                   transition-all ease-in duration-300 whitespace-no-wrap leading-none
                   w-full md:w-64">
-                    Claim your free trial
-                </div>
+                Claim your free trial
+              </div>
             </LMLink>
           </div>
         </div>
-        
+
         {/* Footnotes */}
         <div className="flex flex-col md:flex-row items-center justify-between w-full
           text-boost-secondary-30 text-xs">
