@@ -68,6 +68,7 @@ SEO.defaultProps = {
   lang: 'en',
   meta: [],
   description: '',
+  customTitle: null,
 };
 
 SEO.propTypes = {

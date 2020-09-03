@@ -15,7 +15,7 @@ const Anim = posed.span({
   exit: { opacity: 0 },
 });
 
-const IndexPage = props => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Cloud Based Intake and Marketing Automation for Law Firms" />
     <AnimStagger>
@@ -30,9 +30,9 @@ const IndexPage = props => (
       <Anim>Elegant icon: <span className="eleganticon icon_images" /></Anim>
     </AnimStagger>
     <div className="w-full flex flex-col lg:flex-row flex-fluid-img">
-      <Img fluid={props.data.imageOne.childImageSharp.fluid} alt="One" title="One" />
-      <Img fluid={props.data.imageTwo.childImageSharp.fluid} alt="Two" title="Two" />
-      <Img fluid={props.data.imageThree.childImageSharp.fluid} alt="Three" title="Three" />
+      <Img fluid={data.imageOne.childImageSharp.fluid} alt="One" title="One" />
+      <Img fluid={data.imageTwo.childImageSharp.fluid} alt="Two" title="Two" />
+      <Img fluid={data.imageThree.childImageSharp.fluid} alt="Three" title="Three" />
     </div>
 
   </Layout>

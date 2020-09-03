@@ -5,8 +5,8 @@ import Transition from '../components/transition';
 const wrapPageElement = ({ element, props }) => <Transition animateOnMount {...props}>{element}</Transition>;
 
 wrapPageElement.propTypes = {
-  element: PropTypes.any,
-  props: PropTypes.any,
+  element: PropTypes.node.isRequired,
+  props: PropTypes.object.isRequired,
 };
 
 export default wrapPageElement;
