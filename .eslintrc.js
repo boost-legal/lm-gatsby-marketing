@@ -6,11 +6,11 @@ const [_, ...restricted] = baseRules.rules['no-restricted-syntax'];
 module.exports = {
   extends: 'airbnb',
   parserOptions: {
-    ecmaVersion: 2020,
     sourceType: 'module',
     jsx: true,
   },
   env: {
+    es2020: true,
     node: true,
     browser: true,
   },
