@@ -49,9 +49,6 @@ const FOOTER_CENTER_LINKS = [{
   id: 'privacy-policy',
   to: '/privacy-policy',
 }, {
-  id: 'api-documentation',
-  to: 'https://docs.lawmatics.com',
-}, {
   id: 'terms-of-use',
   to: '/terms-of-use',
 }];
@@ -61,7 +58,11 @@ const MAX_LINKS_PER_COLUMN = 5;
 const NUM_LINK_COLUMNS = Math.ceil(FOOTER_CENTER_LINKS.length / MAX_LINKS_PER_COLUMN);
 
 const renderLinkTitle = (id, title) =>
-  title || titleize(id.replace(/[-]+/g, ' '));
+  title || titleize(id.replace(/[-]+/g, ' '))
+    .replace(/\broi\b/gi, 'ROI')
+    .replace(/\bapi\b/gi, 'API')
+    .replace(/\bsms\b/gi, 'SMS')
+    .replace(/\brss\b/gi, 'RSS');
 
 const renderLink = ({ to, id, title }) =>
   <FooterCenterLink key={id} to={to}>{renderLinkTitle(id, title)}</FooterCenterLink>;
@@ -74,7 +75,7 @@ const bucketLinks = FOOTER_CENTER_LINKS.reduce((acc, curr, idx) => {
 }, []);
 
 const renderBucket = (bucketedLinks, i) => (
-  <div key={i} className={`flex flex-col w-1/${NUM_LINK_COLUMNS}`}>
+  <div key={i} className={`flex flex-col w-1/2 md:w-1/${NUM_LINK_COLUMNS}`}>
     {bucketedLinks.map(renderLink)}
   </div>
 );

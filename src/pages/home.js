@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => (
     <SEO title="Cloud Based Intake and Marketing Automation for Law Firms" />
     <div className="w-full flex flex-col lg:flex-row flex-fluid-img justify-center">
       <Img
-        fluid={props.data.heroImage.childImageSharp.fluid}
+        fluid={data.heroImage.childImageSharp.fluid}
         alt="Engage Convert Nurture Grow"
         style={{ maxWidth: 1706, marginLeft: -253, marginRight: -253 }} />
     </div>

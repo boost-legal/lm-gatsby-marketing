@@ -50,7 +50,7 @@ const Footer = () => (
             </Link>
           </div>
           <div className="w-full md:w-3/5 py-10 md:py-0">
-            <div className="flex justify-center md:justify-between flex-wrap lg:pl-32
+            <div className="flex justify-start md:justify-between flex-wrap lg:pl-32
               text-sm text-boost-secondary-70">
               <FooterCenterLinks />
             </div>

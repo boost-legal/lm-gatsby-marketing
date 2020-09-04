@@ -1,4 +1,4 @@
-export const lmColors = {
+const lmColors = {
   boostPrimary: '#FF8800',
   boostPrimaryLight: '#FFB980',
   boostPrimaryDark: '#955D3B',
@@ -53,3 +53,5 @@ export const lmColors = {
   colorMagentaDark: '#c72575',
   colorMagentaLight: '#e46ea9',
 };
+
+export default lmColors;
