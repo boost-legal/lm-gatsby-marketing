@@ -32,18 +32,34 @@ const Divider = styled.div`
   height: 100px;
 `;
 
+const Hero = styled(Img)`
+  max-width: 488px;
+  margin: 0;
+  @media (min-width: 945px) {
+    max-width: 1706px;
+    margin-left: -253px;
+    margin-right: -253px;
+  }
+`;
+
 const HomePage = ({ data }) => (
   <Layout noStyle maxWidth="100%">
     <SEO title="Cloud Based Intake and Marketing Automation for Law Firms" />
 
     <HeroSection>
-      <div className="w-full hidden md:flex justify-center flex-fluid-img">
-        <Img
-          fluid={data.heroImage.childImageSharp.fluid}
-          alt="Engage Convert Nurture Grow"
-          style={{ maxWidth: 1706, marginLeft: -253, marginRight: -253 }} />
+      <div className="w-full flex justify-center flex-fluid-img">
+        <Hero
+          fluid={[
+            data.heroImageMobile.childImageSharp.fluid,
+            {
+              ...data.heroImage.childImageSharp.fluid,
+              media: '(min-width: 945px)',
+            },
+          ]}
+          alt="Engage Convert Nurture Grow" />
       </div>
-      <p className="text-center text-boost-secondary-70 text-2xl leading-9 pt-10 pb-5 z-20">
+      <p className="text-center text-boost-secondary-70 text-2xl leading-9
+        pt-10 pb-5 px-3 z-20">
         Grow your law firm with the most powerful
         <br className="hidden md:inline-block" />
         <span className="text-boost-secondary font-bold px-2">
@@ -63,7 +79,7 @@ const HomePage = ({ data }) => (
             text-l uppercase font-bold text-center text-boost-secondary
             border border-transparent bg-boost-warning
             hover:bg-boost-primary hover:opacity-100
-            rounded flex items-center transition-all">
+            rounded flex items-center justify-center transition-all">
           Claim your free trial
         </Link>
         <Link
@@ -72,7 +88,7 @@ const HomePage = ({ data }) => (
             text-l uppercase font-bold text-center text-boost-secondary
             border border-boost-warning bg-white bg-opacity-50
             hover:bg-white hover:border-boost-primary hover:opacity-100
-            rounded flex items-center transition-all">
+            rounded flex items-center justify-center transition-all">
           Get a Demo
         </Link>
       </div>
@@ -131,6 +147,9 @@ export const pageQuery = graphql`
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
+    }
+    heroImageMobile: file(relativePath: { eq: "home/hero-ecng-vert.png" }) {
+      ...fluidImage
     }
   }
 `;
