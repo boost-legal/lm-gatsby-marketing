@@ -19,12 +19,29 @@ const Anim = posed.span({
 const IndexPage = ({ data }) => (
   <Layout noStyle maxWidth="100%">
     <SEO title="Cloud Based Intake and Marketing Automation for Law Firms" />
-    <div className="w-full flex flex-col lg:flex-row flex-fluid-img justify-center">
-      <Img
-        fluid={data.heroImage.childImageSharp.fluid}
-        alt="Engage Convert Nurture Grow"
-        style={{ maxWidth: 1706, marginLeft: -253, marginRight: -253 }} />
+
+    <div className="w-full flex flex-col items-center pt-12 md:pt-24">
+      <div className="w-full hidden md:flex justify-center flex-fluid-img">
+        <Img
+          fluid={data.heroImage.childImageSharp.fluid}
+          alt="Engage Convert Nurture Grow"
+          style={{ maxWidth: 1706, marginLeft: -253, marginRight: -253 }} />
+      </div>
+      <p className="text-center text-boost-secondary-70 text-2xl leading-9 pt-12">
+        Grow your law firm with the most powerful
+        <br className="hidden md:inline-block" />
+        <span className="text-boost-secondary font-bold px-2">
+          Client Intake
+        </span>
+        and
+        <span className="text-boost-secondary font-bold px-2">
+          Marketing Automation CRM
+        </span>
+        <br className="hidden md:inline-block" />
+        built for the modern practice
+      </p>
     </div>
+
     <Section>
       <AnimStagger>
         <Anim><h1>Heading One</h1></Anim>
@@ -38,6 +55,7 @@ const IndexPage = ({ data }) => (
         <Anim>Elegant icon: <span className="eleganticon icon_images" /></Anim>
       </AnimStagger>
     </Section>
+
     <Section>
       <div className="w-full flex flex-col lg:flex-row flex-fluid-img">
         <Img fluid={data.imageOne.childImageSharp.fluid} alt="One" title="One" />
