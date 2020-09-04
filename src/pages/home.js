@@ -1,7 +1,10 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import posed from 'react-pose';
+import styled from 'styled-components';
+import tw from 'tailwind.macro';
+import lmColors from '../helpers/lmColors';
 
 import Layout from '../components/layout';
 import Section from '../components/section';
@@ -16,18 +19,31 @@ const Anim = posed.span({
   exit: { opacity: 0 },
 });
 
-const IndexPage = ({ data }) => (
+const HeroSection = styled.div`
+  ${tw`w-full flex flex-col items-center pt-12 md:pt-24 relative`}
+  background-image: linear-gradient(
+    180deg,${lmColors.boostWhite} 0%,${lmColors.boostSecondary10} 85%);
+`;
+
+const Divider = styled.div`
+  ${tw`w-full z-10 bottom-0 block absolute bg-no-repeat pointer-events-none`}
+  background-image: url(/svg/divider.svg);
+  background-size: 100% 100px;
+  height: 100px;
+`;
+
+const HomePage = ({ data }) => (
   <Layout noStyle maxWidth="100%">
     <SEO title="Cloud Based Intake and Marketing Automation for Law Firms" />
 
-    <div className="w-full flex flex-col items-center pt-12 md:pt-24">
+    <HeroSection>
       <div className="w-full hidden md:flex justify-center flex-fluid-img">
         <Img
           fluid={data.heroImage.childImageSharp.fluid}
           alt="Engage Convert Nurture Grow"
           style={{ maxWidth: 1706, marginLeft: -253, marginRight: -253 }} />
       </div>
-      <p className="text-center text-boost-secondary-70 text-2xl leading-9 pt-12">
+      <p className="text-center text-boost-secondary-70 text-2xl leading-9 pt-10 pb-5 z-20">
         Grow your law firm with the most powerful
         <br className="hidden md:inline-block" />
         <span className="text-boost-secondary font-bold px-2">
@@ -40,7 +56,28 @@ const IndexPage = ({ data }) => (
         <br className="hidden md:inline-block" />
         built for the modern practice
       </p>
-    </div>
+      <div className="flex items-center justify-center flex-wrap z-20 pb-6">
+        <Link
+          to="/demo"
+          className="p-2 m-2 md:px-8 w-10/12 md:w-auto h-12 md:h-16
+            text-l uppercase font-bold text-center text-boost-secondary
+            border border-transparent bg-boost-warning
+            hover:bg-boost-primary hover:opacity-100
+            rounded flex items-center transition-all">
+          Claim your free trial
+        </Link>
+        <Link
+          to="/get-a-demo"
+          className="p-2 m-2 md:px-8 w-10/12 md:w-auto h-12 md:h-16
+            text-l uppercase font-bold text-center text-boost-secondary
+            border border-boost-warning bg-white bg-opacity-50
+            hover:bg-white hover:border-boost-primary hover:opacity-100
+            rounded flex items-center transition-all">
+          Get a Demo
+        </Link>
+      </div>
+      <Divider />
+    </HeroSection>
 
     <Section>
       <AnimStagger>
@@ -66,7 +103,7 @@ const IndexPage = ({ data }) => (
   </Layout>
 );
 
-export default IndexPage;
+export default HomePage;
 
 export const fluidImage = graphql`
   fragment fluidImage on File {
