@@ -74,20 +74,20 @@ const HomePage = ({ data }) => (
       </p>
       <div className="flex items-center justify-center flex-wrap z-20 pb-6">
         <Link
-          to="/demo"
+          to="/trial"
           className="p-2 m-2 md:px-8 w-10/12 md:w-auto h-12 md:h-16
             text-l uppercase font-bold text-center text-boost-secondary
             border border-transparent bg-boost-warning
-            hover:bg-boost-primary hover:opacity-100
+            hover:bg-boost-primary hover:opacity-100 raise
             rounded flex items-center justify-center transition-all">
           Claim your free trial
         </Link>
         <Link
-          to="/get-a-demo"
+          to="/demo"
           className="p-2 m-2 md:px-8 w-10/12 md:w-auto h-12 md:h-16
             text-l uppercase font-bold text-center text-boost-secondary
             border border-boost-warning bg-white bg-opacity-50
-            hover:bg-white hover:border-boost-primary hover:opacity-100
+            hover:bg-white hover:border-boost-primary hover:opacity-100 raise
             rounded flex items-center justify-center transition-all">
           Get a Demo
         </Link>

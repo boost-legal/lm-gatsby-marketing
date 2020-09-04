@@ -23,13 +23,13 @@ const AnimatedContainer = posed.div({
   },
 });
 
-const LMLink = styled(Link)`
+const CTA = styled(Link)`
   transition: all 200ms ease-in;
   ${tw`text-boost-secondary-70 hover:text-boost-secondary hover:opacity-100
     relative text-sm pb-2`}
 
   &.active {
-    ${tw`text-boost-primary`}
+    ${tw`hidden`}
   }
 `;
 
@@ -56,16 +56,16 @@ const Footer = () => (
             </div>
           </div>
           <div className="w-full md:w-1/5">
-            <LMLink
+            <CTA
               className="flex items-center justify-center w-full"
-              to="/demo">
+              to="/trial">
               <div className="text-boost-secondary bg-boost-warning hover:bg-boost-primary
                   py-4 px-2 mb-2 rounded uppercase font-bold text-center text-xs cursor-pointer
                   transition-all ease-in duration-300 whitespace-no-wrap leading-none
                   w-full md:w-64">
                 Claim your free trial
               </div>
-            </LMLink>
+            </CTA>
           </div>
         </div>
 
