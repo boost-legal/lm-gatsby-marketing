@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 import posed from 'react-pose';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
+import Link from '../link';
 import Nav from './nav';
 import Logo from '../../assets/svg/lawmatics-logo.svg';
 

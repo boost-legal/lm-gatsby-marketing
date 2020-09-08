@@ -1,10 +1,11 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import posed from 'react-pose';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
+import Link from '../components/link';
 import Layout from '../components/layout';
 import Section from '../components/section';
 import SEO from '../components/seo';
