@@ -3,7 +3,8 @@ const targetAddress = new URL('https://www.lawmatics.com');
 module.exports = {
   siteMetadata: {
     title: 'Lawmatics',
-    description: 'Engage > Convert > Nurture > Grow your law firm with the most powerful Client Intake and Marketing Automation Platform built for the modern practice',
+    description: 'Engage > Convert > Nurture > Grow your law firm with the most'
+      + 'powerful Client Intake and Marketing Automation Platform built for the modern practice',
     author: '@lawmatics',
     siteWidth: 1320,
   },
@@ -14,6 +15,12 @@ module.exports = {
     'gatsby-plugin-less',
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-svg',
+    {
+      resolve: 'gatsby-plugin-scroll-reveal',
+      options: {
+        once: false,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
