@@ -7,8 +7,9 @@ import Link from '../link';
 const NavItem = styled(Link)`
   transition: all 200ms ease-in;
   ${tw`text-boost-secondary-70 font-bold relative whitespace-no-wrap
-    no-underline text-md md:text-sm z-10 md:mx-3 py-2 md:py-1 md:w-auto w-full
+    no-underline z-10 md:mx-3 py-2 md:py-1 md:w-auto w-full
     px-3 md:px-0 text-center rounded`}
+  font-size: 13px;
 
   :after {
     bottom: -10px;
@@ -33,6 +34,7 @@ const NavItem = styled(Link)`
 
   @media (max-width: 768px) {
     ${tw`hover:bg-boost-secondary-10`}
+    font-size: 16px;
     :after{ display: none; }
   }
 `;
@@ -44,14 +46,16 @@ const CTA = styled(Link)`
 `;
 
 const Nav = () => (
-  <nav className="flex flex-col items-center justify-center md:flex-row
-    w-full md:w-auto px-4 md:px-0">
-    <NavItem to="/home">Home</NavItem>
-    <NavItem to="/features">Features</NavItem>
-    <NavItem to="/integrations">Integrations</NavItem>
-    <NavItem to="/pricing">Pricing</NavItem>
-    <NavItem to="/about-us">About Us</NavItem>
-    <NavItem to="/contact">Contact</NavItem>
+  <nav className="flex flex-col md:flex-row items-center justify-between
+    w-full md:w-auto px-4 md:px-0 flex-grow">
+    <div className="flex flex-col md:flex-row w-full md:pl-4">
+      <NavItem to="/home">Home</NavItem>
+      <NavItem to="/features">Features</NavItem>
+      <NavItem to="/integrations">Integrations</NavItem>
+      <NavItem to="/pricing">Pricing</NavItem>
+      <NavItem to="/about-us">About Us</NavItem>
+      <NavItem to="/contact">Contact</NavItem>
+    </div>
     {/* Mobile */}
     <NavItem
       to="https://app.lawmatics.com"

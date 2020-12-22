@@ -99,24 +99,9 @@ const HomePage = ({ data }) => (
     <Section>
       <AnimStagger>
         <Anim><h1>Heading One</h1></Anim>
-        <Anim><h2>Heading Two</h2></Anim>
-        <Anim><h3>Heading Three</h3></Anim>
-        <Anim><h4>Heading Four</h4></Anim>
-        <Anim><h5>Heading Five</h5></Anim>
-        <Anim><h6>Heading Six</h6></Anim>
-        <Anim><p>Text</p></Anim>
-        <Anim>Boost icon: <span className="boosticon icon-logo" /></Anim>
-        <Anim>Elegant icon: <span className="eleganticon icon_images" /></Anim>
       </AnimStagger>
     </Section>
 
-    <Section>
-      <div className="w-full flex flex-col lg:flex-row flex-fluid-img">
-        <Img fluid={data.imageOne.childImageSharp.fluid} alt="One" title="One" />
-        <Img fluid={data.imageTwo.childImageSharp.fluid} alt="Two" title="Two" />
-        <Img fluid={data.imageThree.childImageSharp.fluid} alt="Three" title="Three" />
-      </div>
-    </Section>
   </Layout>
 );
 

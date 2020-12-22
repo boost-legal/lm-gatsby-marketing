@@ -7,7 +7,7 @@ import Link from '../link';
 import Nav from './nav';
 import Logo from '../../assets/svg/lawmatics-logo.svg';
 
-const headerHeight = '80px';
+const headerHeight = '106px';
 
 const AnimatedContainer = posed.div({
   enter: {
@@ -51,7 +51,7 @@ const Toggle = styled.div`
 `;
 
 const Navbox = styled.div`
-  ${tw`flex items-center justify-end`}
+  ${tw`flex items-baseline justify-between w-full`}
 
   @media (max-width: 945px) {
     ${tw`bg-boost-secondary-05 py-8 w-full fixed flex-col left-0 z-1 border-t-4 shadow-xl`}
@@ -104,11 +104,11 @@ const Header = () => {
   return (
     <>
       <AnimatedContainer className="z-50 relative">
-        <div className="w-full flex justify-center bg-white fixed">
+        <div className="w-full flex justify-center bg-white fixed" style={{ height: 106 }}>
           <HeaderDiv>
             <Togglebox>
               <Link to="/">
-                <Logo className="w-48" />
+                <Logo className="-mt-2" style={{ maxWidth: 180, width: '100%' }} />
               </Link>
               <Toggle
                 isOpen={isOpen}
