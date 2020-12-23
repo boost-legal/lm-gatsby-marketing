@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import posed from 'react-pose';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -7,7 +7,7 @@ import Link from '../link';
 import Nav from './nav';
 import Logo from '../../assets/svg/lawmatics-logo.svg';
 
-const headerHeight = '106px';
+const headerHeight = 106;
 
 const AnimatedContainer = posed.div({
   enter: {
@@ -56,7 +56,6 @@ const Navbox = styled.div`
   @media (max-width: 945px) {
     ${tw`bg-boost-secondary-05 py-8 w-full fixed flex-col left-0 z-1 border-t-4 shadow-xl`}
     transition: all 0.3s ease-in-out;
-    top: ${props => (props.open ? '-600px' : headerHeight)};
   }
 `;
 
@@ -68,10 +67,12 @@ const Hamburger = styled.div`
   transition: all .3s linear;
   align-self: center;
   position: relative;
+  user-select: none;
   transform: ${props => (props.open ? 'rotate(-45deg)' : 'inherit')};
 
   ::before,
   ::after {
+    user-select: none;
     width: 30px;
     height: 3px;
     border-radius: 3px;
@@ -95,16 +96,31 @@ const Hamburger = styled.div`
 
 const Buffer = styled.div`
   width: 100%;
-  height: ${headerHeight};
+  height: ${headerHeight}px;
 `;
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+    const onScroll = e => {
+      setScrollTop(e.target.documentElement.scrollTop);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [scrollTop]);
+
+  const scrolled = scrollTop > headerHeight;
+  const smHeaderHeight = 70;
 
   return (
     <>
       <AnimatedContainer className="z-50 relative">
-        <div className="w-full flex justify-center bg-white fixed" style={{ height: 106 }}>
+        <div
+          className="w-full flex justify-center bg-white fixed
+            transition-all duration-200 ease-in"
+          style={{ height: scrolled ? smHeaderHeight : headerHeight }}>
           <HeaderDiv>
             <Togglebox>
               <Link to="/">
@@ -116,8 +132,12 @@ const Header = () => {
                 {isOpen ? <Hamburger open /> : <Hamburger />}
               </Toggle>
             </Togglebox>
-            {isOpen
-              ? <Navbox><Nav /></Navbox> : <Navbox open><Nav /></Navbox>}
+            {isOpen ? (
+              <Navbox
+                style={{ top: scrolled ? smHeaderHeight : headerHeight }}>
+                <Nav />
+              </Navbox>
+            ) : <Navbox style={{ top: -7 * headerHeight }}><Nav /></Navbox>}
           </HeaderDiv>
         </div>
       </AnimatedContainer>
