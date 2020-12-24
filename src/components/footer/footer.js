@@ -60,10 +60,10 @@ const Footer = () => (
               className="flex items-center justify-center w-full"
               to="/trial">
               <div className="text-boost-secondary bg-boost-warning hover:bg-boost-primary
-                  py-4 px-2 mb-2 rounded uppercase font-bold text-center text-xs cursor-pointer
+                  py-4 px-2 mb-2 rounded uppercase font-extrabold text-center text-xs cursor-pointer
                   transition-all ease-in duration-300 whitespace-no-wrap leading-none
                   w-full md:w-64">
-                Claim your free trial
+                Learn more
               </div>
             </CTA>
           </div>

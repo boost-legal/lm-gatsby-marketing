@@ -75,11 +75,11 @@ const Nav = () => (
     <CTA
       className="text-boost-secondary hover:opacity-100
         bg-boost-warning hover:bg-boost-primary h-10 flex items-center justify-center
-        py-2 px-3 rounded uppercase font-bold text-center text-xs mt-3 md:mt-0 md:ml-2
+        py-2 px-3 rounded uppercase font-extrabold text-center text-xs mt-3 md:mt-0 md:ml-2
         transition-all ease-in duration-300 whitespace-no-wrap leading-none
         w-full md:w-auto"
       to="/trial">
-      Claim your free trial
+      Learn more
     </CTA>
   </nav>
 );

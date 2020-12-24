@@ -9,7 +9,7 @@ const Section = ({ children, className, maxWidth, noStyle, fullWidth }) => (
       margin: noStyle || '0 auto',
       padding: noStyle || '0 0.5rem 1.5rem',
     }}>
-    <main>{children}</main>
+    {children}
   </div>
 );
 
