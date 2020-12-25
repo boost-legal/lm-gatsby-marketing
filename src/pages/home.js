@@ -1,7 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
-import posed from 'react-pose';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import lmColors from '../helpers/lmColors';
@@ -11,15 +10,7 @@ import Layout from '../components/layout';
 import Section from '../components/section';
 import SEO from '../components/seo';
 import Arrow from '../assets/svg/link-arrow.svg';
-
-const AnimStagger = posed.div({
-  enter: { staggerChildren: 100, delayChildren: 500 },
-});
-const Anim = posed.span({
-  init: { display: 'block', marginLeft: 50 },
-  enter: { marginLeft: 0, opacity: 1 },
-  exit: { opacity: 0 },
-});
+import Quote from '../assets/svg/quote.svg';
 
 const HeroSection = styled.div`
   ${tw`w-full flex flex-col md:flex-row items-center pt-16 relative`}
@@ -47,7 +38,7 @@ const PreHeader = styled.p`
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   text-transform: uppercase;
   color: ${lmColors.boostSecondary70};
 `;
@@ -56,7 +47,7 @@ const List = styled.div`
   font-size: 18px;
   display: flex;
   align-items: center;
-  margin: 24px 0;
+  margin: 20px 0;
 `;
 
 const Check = styled.div`
@@ -72,6 +63,22 @@ const Check = styled.div`
     color: ${lmColors.boostSecondary10};
     border-radius: 100px;
     margin-right: 16px;
+  }
+`;
+
+const QuoteContent = styled.p`
+  ${tw`italic leading-8 mb-3`}
+  font-size: 20px;
+  max-width: 850px;
+`;
+
+const QuoteAuthor = styled.p`
+  ${tw`mb-0`}
+  font-size: 15px;
+  color: ${lmColors.boostSecondary50};
+  ::before {
+    content: '—';
+    margin-right: 5px;
   }
 `;
 
@@ -169,7 +176,7 @@ const HomePage = ({ data }) => (
         </div>
         <Link to="#" className="font-bold flex text-xl text-boost-primary">
           Learn more
-          <Arrow className="ml-2" style={{ fill: `${lmColors.boostPrimary}` }} />
+          <Arrow className="ml-2 fill-current" />
         </Link>
       </div>
       <div
@@ -205,20 +212,67 @@ const HomePage = ({ data }) => (
         </div>
         <Link to="#" className="font-bold flex text-xl text-boost-blue">
           Learn more
-          <Arrow className="ml-2" style={{ fill: `${lmColors.boostBlue}` }} />
+          <Arrow className="ml-2 fill-current" />
         </Link>
       </div>
     </Section>
 
     <Section>
-      <AnimStagger>
-        <div
-          data-sal="slide-up"
-          data-sal-delay="300"
-          data-sal-easing="ease">
-          <Anim><h1>Heading One</h1></Anim>
+      <div className="flex flex-col md:flex-row items-center justify-center
+        mt-2 py-10 md:py-20 px-5 border-t border-b">
+        <Quote data-sal="slide-right" data-sal-delay="500" className="md:mr-8 mb-8 md:mb-0" />
+        <div className="flex flex-col">
+          <QuoteContent>
+            Lawmatics is one of the few software that provides such a high level of
+            customer service. I love the responsiveness of your company and how often
+            you release great features. I will continue to recommend your services
+            to my colleagues.
+          </QuoteContent>
+          <QuoteAuthor>
+            Natalie Phan, Natalie Phan Law
+          </QuoteAuthor>
         </div>
-      </AnimStagger>
+      </div>
+    </Section>
+
+    <Section>
+      <div className="flex flex-col md:flex-row py-10 md:py-20">
+        <div
+          data-sal="slide-right"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+          className="w-full md:w-1/2 flex items-center justify-center px-5">
+          <Img
+            className="block mb-10 md:mb-0"
+            style={{ width: 578 }}
+            fluid={[data.followupImg.childImageSharp.fluid]}
+            alt="Client Intake" />
+        </div>
+        <div
+          data-sal="slide-left"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+          className="w-full md:w-1/2 flex flex-col px-6">
+          <PreHeader>Attorney-client relationship management</PreHeader>
+          <h2 className="leading-9 text-4xl mb-0 pb-5">
+            Effortless follow-ups
+          </h2>
+          <p className="text-xl leading-8 mb-0">
+            Automate follow-up to ensure that you respond to new potential clients
+            immediately. Don&apos;t let anyone fall through the cracks.
+          </p>
+          <div className="block pt-2 pb-4">
+            <List><Check />Greet new leads with a personalized message</List>
+            <List><Check />Send out automated reminders and confirmations</List>
+            <List><Check />Keep track of all touchpoints in an organized timeline</List>
+            <List><Check />Have all client information ready and in one place</List>
+          </div>
+          <Link to="#" className="font-bold flex text-xl text-boost-secondary">
+            Learn more
+            <Arrow className="ml-2 fill-current" />
+          </Link>
+        </div>
+      </div>
     </Section>
 
   </Layout>
@@ -235,6 +289,7 @@ export const fluidImage = graphql`
     }
   }
 `;
+
 export const pageQuery = graphql`
   query {
     heroImage: file(relativePath: { eq: "home/hero-trend-up.png" }) {
@@ -249,6 +304,13 @@ export const pageQuery = graphql`
     }
     automationImg: file(relativePath: { eq: "home/section-automation.png" }) {
       ...fluidImage
+    }
+    followupImg: file(relativePath: { eq: "home/section-follow-ups.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 578) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
     }
   }
 `;
