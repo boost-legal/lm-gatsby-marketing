@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import posed from 'react-pose';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+import Cookies from 'js-cookie';
 
 import Link from '../link';
 import Nav from './nav';
@@ -114,8 +115,13 @@ const TopBar = styled.div`
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [barOpen, setBarOpen] = useState(true);
+  const [barOpen, setBarOpen] = useState(Cookies.get('barOpen') !== 'false');
   const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+    console.log(`setBarOpen: ${barOpen}`);
+    Cookies.set('barOpen', barOpen);
+  }, [barOpen]);
 
   useEffect(() => {
     const onScroll = e => {
