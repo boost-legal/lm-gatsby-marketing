@@ -119,7 +119,6 @@ const Header = () => {
   const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
-    console.log(`setBarOpen: ${barOpen}`);
     Cookies.set('barOpen', barOpen);
   }, [barOpen]);
 
