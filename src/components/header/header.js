@@ -6,8 +6,10 @@ import tw from 'tailwind.macro';
 import Link from '../link';
 import Nav from './nav';
 import Logo from '../../assets/svg/lawmatics-logo.svg';
+import Arrow from '../../assets/svg/link-arrow.svg';
 
 const headerHeight = 106;
+const topBarHeight = 46;
 
 const AnimatedContainer = posed.div({
   enter: {
@@ -55,7 +57,7 @@ const Navbox = styled.div`
 
   @media (max-width: 945px) {
     ${tw`bg-boost-secondary-05 py-8 w-full fixed flex-col left-0 z-1 border-t-4 shadow-xl`}
-    transition: all 0.3s ease-in-out;
+    transition: all .3s ease-in-out;
   }
 `;
 
@@ -79,7 +81,7 @@ const Hamburger = styled.div`
     ${tw`bg-boost-secondary-70`}
     content: "";
     position: absolute;
-    transition: all 0.3s linear;
+    transition: all .3s linear;
   }
 
   ::before {
@@ -99,8 +101,20 @@ const Buffer = styled.div`
   height: ${headerHeight}px;
 `;
 
+const TopBar = styled.div`
+  ${tw`flex flex-row items-center justify-between w-full bg-boost-primary-15`}
+  max-height: 0;
+  height: ${topBarHeight}px;
+  transition: max-height .3s ease-in-out;
+  &.closed {
+    height: 0;
+    max-height: 0;
+  }
+`;
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [barOpen, setBarOpen] = useState(true);
   const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
@@ -111,16 +125,41 @@ const Header = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, [scrollTop]);
 
-  const scrolled = scrollTop > headerHeight;
+  const scrolled = scrollTop > 0;
   const smHeaderHeight = 70;
+  const topBarCurrentHeight = barOpen && scrollTop === 0 ? topBarHeight : 0;
 
   return (
     <>
       <AnimatedContainer className="z-50 relative">
+        <TopBar
+          className="z-10 relative overflow-hidden"
+          style={{ maxHeight: topBarCurrentHeight }}>
+          <div className="hidden md:flex w-10" />
+          <div className="flex flex-col md:flex-row items-center md:items-baseline
+            justify-center w-full">
+            <div className="text-14 text-center text-boost-primary-dark leading-4">
+              <em>New eBook: </em>
+              <strong>Building a Foundation for Growth</strong>
+            </div>
+            <Link to="#" className="pl-3 text-14 flex items-center font-bold leading-4">
+              Check it out
+              <Arrow className="ml-2 fill-current w-4" />
+            </Link>
+          </div>
+          <div className="flex p-2 md:w-10">
+            <div
+              role="presentation"
+              onClick={() => setBarOpen(false)}>
+              <div className="boosticon icon-exit cursor-pointer" />
+            </div>
+          </div>
+        </TopBar>
         <div
           className="w-full flex justify-center bg-white fixed
-            transition-all duration-200 ease-in"
-          style={{ height: scrolled ? smHeaderHeight : headerHeight }}>
+            transition-all duration-200 ease-in z-0"
+          style={{ height: scrolled ? smHeaderHeight : headerHeight,
+            boxShadow: '0 -100px 0 100px white' }}>
           <HeaderDiv>
             <Togglebox>
               <Link to="/">
@@ -134,7 +173,8 @@ const Header = () => {
             </Togglebox>
             {isOpen ? (
               <Navbox
-                style={{ top: scrolled ? smHeaderHeight : headerHeight }}>
+                style={{ top: scrolled ? smHeaderHeight + topBarCurrentHeight
+                  : headerHeight + topBarCurrentHeight }}>
                 <Nav />
               </Navbox>
             ) : <Navbox style={{ top: -7 * headerHeight }}><Nav /></Navbox>}
