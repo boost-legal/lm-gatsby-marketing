@@ -12,10 +12,10 @@
     "gatsby-plugin-canonical-urls": "^2.7.0",
     "gatsby-plugin-less": "^4.4.0",
     "gatsby-plugin-manifest": "^2.9.1",
+    "gatsby-plugin-next-seo": "^1.6.1",
     "gatsby-plugin-offline": "^3.7.1",
     "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-purgecss": "^5.0.0",
-    "gatsby-plugin-react-helmet": "^3.7.0",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-robots-txt": "^1.5.5",
     "gatsby-plugin-s3": "^0.3.8",
@@ -30,12 +30,12 @@
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^1.0.7",
     "react-pose": "^4.0.10",
     "styled-components": "^5.2.1",
     "tailwind.macro": "^1.0.0-alpha.10",
-    "titleize": "^2.1.0",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^1.9.6",
+    "titleize": "^2.1.0"
   },
   "devDependencies": {
     "eslint": "^7.16.0",

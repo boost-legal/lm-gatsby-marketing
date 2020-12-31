@@ -10,7 +10,7 @@ module.exports = {
     siteUrl: 'https://www.lawmatics.com',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-next-seo',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-less',

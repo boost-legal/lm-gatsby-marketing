@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react"
+import PropTypes from "prop-types"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, customTitle }) {
+function SEO({ description, lang, title, customTitle }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -12,71 +12,49 @@ function SEO({ description, lang, meta, title, customTitle }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
-    `,
-  );
+    `
+  )
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description || site.siteMetadata.description
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+    <GatsbySeo
+      langauge={lang}
       title={title}
       titleTemplate={customTitle || `${site.siteMetadata.title} - %s`}
-      meta={[
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:title',
-          content: title,
-        },
-        {
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary',
-        },
-        {
-          name: 'twitter:creator',
-          content: site.siteMetadata.author,
-        },
-        {
-          name: 'twitter:title',
-          content: title,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
-      ].concat(meta)} />
-  );
+      description={metaDescription}
+      canonical={site.siteMetadata.siteUrl}
+      twitter={{
+        cardType: 'summary',
+        handle: site.siteMetadata.author,
+        site: site.siteMetadata.title,
+      }}
+      openGraph={{
+        title: customTitle || title,
+        description: metaDescription,
+        type: 'website',
+        url: site.siteMetadata.siteUrl,
+        site_name: site.siteMetadata.title,
+      }}
+    />
+  )
 }
 
 SEO.defaultProps = {
   lang: 'en',
-  meta: [],
   description: '',
   customTitle: null,
-};
+}
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
   customTitle: PropTypes.string,
-};
+}
 
-export default SEO;
+export default SEO
