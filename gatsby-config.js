@@ -15,6 +15,7 @@ module.exports = {
     'gatsby-plugin-less',
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-svg',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-scroll-reveal',
       options: {
