@@ -7,6 +7,7 @@ module.exports = {
       + 'powerful Client Intake and Marketing Automation Platform built for the modern practice',
     author: '@lawmatics',
     siteWidth: 1320,
+    siteUrl: 'https://www.lawmatics.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -16,6 +17,8 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-svg',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
     {
       resolve: 'gatsby-plugin-scroll-reveal',
       options: {
