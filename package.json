@@ -32,7 +32,8 @@
     "react-pose": "^4.0.10",
     "styled-components": "^5.2.1",
     "tailwind.macro": "^1.0.0-alpha.10",
-    "titleize": "^2.1.0"
+    "titleize": "^2.1.0",
+    "tailwindcss": "^1.9.6"
   },
   "devDependencies": {
     "eslint": "^7.16.0",
@@ -44,8 +45,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "gatsby-plugin-eslint": "^2.0.8",
-    "prettier": "2.0.5",
-    "tailwindcss": "^1.9.6"
+    "prettier": "2.0.5"
   },
   "license": "0BSD",
   "scripts": {
