@@ -35,7 +35,6 @@
     "titleize": "^2.1.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.12.0",
     "eslint": "^7.16.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-base": "^14.2.1",
