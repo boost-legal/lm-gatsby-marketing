@@ -401,7 +401,7 @@ const HomePage = ({ data }) => (
           <h2 className="leading-9 text-4xl mb-0 pb-5">
             Partnering with industry <br className="hidden md:inline" />leading solutions
           </h2>
-          <p className="text-xl leading-8 mb-0">
+          <p className="text-xl leading-8 mb-0 pb-8">
             Expand Lawmatics&apos; capabilities with supported integrations.
             We&apos;re committed to broaden this list to include all major software
             bundles used by the industry.
