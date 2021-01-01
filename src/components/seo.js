@@ -23,7 +23,7 @@ function SEO({ description, lang, title, customTitle }) {
 
   return (
     <GatsbySeo
-      langauge={lang}
+      language='en'
       title={title}
       titleTemplate={customTitle || `${site.siteMetadata.title} - %s`}
       description={metaDescription}
