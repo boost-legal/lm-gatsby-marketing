@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, title, customTitle }) {
+function SEO({ description, meta, title, customTitle }) {
   const { site: { siteMetadata } = useStaticQuery(
     graphql`
       query {
@@ -40,19 +40,21 @@ function SEO({ description, title, customTitle }) {
         url: siteMetadata.siteUrl,
         site_name: siteMetadata.title,
       }}
-    />
+      metaData={meta} />
   )
 }
 
 SEO.defaultProps = {
   description: '',
   customTitle: null,
+  meta: [],
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string.isRequired,
   customTitle: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default SEO
