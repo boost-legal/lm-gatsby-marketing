@@ -4,7 +4,7 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, meta, title, customTitle }) {
-  const { site: { siteMetadata } = useStaticQuery(
+  const { site: { siteMetadata } } = useStaticQuery(
     graphql`
       query {
         site {
