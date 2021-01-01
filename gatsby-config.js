@@ -35,11 +35,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-purgecss',
       options: {
-        printRejected: true, // Print removed selectors and processed file names
-        stages: ['develop'],
         tailwind: true, // Enable tailwindcss support
-        // whitelist: ['whitelist'], // Don't remove this selector
         ignore: ['/sal.css'], // Ignore files/folders
+        // printRejected: true, // Print removed selectors and processed file names
+        // whitelist: ['whitelist'], // Don't remove this selector
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       },
     },
