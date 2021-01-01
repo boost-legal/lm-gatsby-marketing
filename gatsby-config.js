@@ -7,7 +7,7 @@ module.exports = {
       + 'powerful Client Intake and Marketing Automation Platform built for the modern practice',
     author: '@lawmatics',
     siteWidth: 1320,
-    siteUrl: 'https://www.lawmatics.com',
+    siteUrl: targetAddress.href,
   },
   plugins: [
     'gatsby-plugin-next-seo',
