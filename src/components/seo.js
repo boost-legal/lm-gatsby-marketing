@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { GatsbySeo } from "gatsby-plugin-next-seo"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
+import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, meta, title, customTitle }) {
   const { site: { siteMetadata } } = useStaticQuery(
@@ -16,14 +16,14 @@ function SEO({ description, meta, title, customTitle }) {
           }
         }
       }
-    `
-  )
+    `,
+  );
 
-  const metaDescription = description || siteMetadata.description
+  const metaDescription = description || siteMetadata.description;
 
   return (
     <GatsbySeo
-      language='en'
+      language="en"
       title={title}
       titleTemplate={customTitle || `${siteMetadata.title} - %s`}
       description={metaDescription}
@@ -41,20 +41,20 @@ function SEO({ description, meta, title, customTitle }) {
         site_name: siteMetadata.title,
       }}
       metaData={meta} />
-  )
+  );
 }
 
 SEO.defaultProps = {
   description: '',
   customTitle: null,
   meta: [],
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string.isRequired,
   customTitle: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-}
+};
 
-export default SEO
+export default SEO;
