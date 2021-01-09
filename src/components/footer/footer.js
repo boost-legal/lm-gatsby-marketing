@@ -10,13 +10,13 @@ import Parrot from '../lawmatics/parrot';
 
 const AnimatedContainer = posed.div({
   enter: {
-    y: 0,
+    opacity: 1,
     transition: {
       ease: 'easeInOut',
     },
   },
   exit: {
-    y: '100%',
+    opacity: 0,
     transition: {
       ease: 'easeInOut',
     },

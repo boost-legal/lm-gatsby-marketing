@@ -145,9 +145,6 @@ const HomePage = ({ data }) => (
     {/* CARDS */}
     <Section className="w-full flex flex-col lg:flex-row">
       <div
-        data-sal="slide-right"
-        data-sal-delay="300"
-        data-sal-easing="ease"
         className="w-full lg:w-1/2 p-8 rounded-lg lg:mr-4 mb-6 lg:mb-0"
         style={{ backgroundColor: '#FFF6EC' }}>
         <div className="w-full flex flex-col md:flex-row justify-between items-start lg:items-end">
@@ -181,9 +178,6 @@ const HomePage = ({ data }) => (
         </Link>
       </div>
       <div
-        data-sal="slide-left"
-        data-sal-delay="300"
-        data-sal-easing="ease"
         className="w-full lg:w-1/2 p-8 rounded-lg lg:ml-4"
         style={{ backgroundColor: '#ECF9FF' }}>
         <div className="w-full flex flex-col md:flex-row justify-between items-start lg:items-end">
@@ -222,7 +216,7 @@ const HomePage = ({ data }) => (
     <Section>
       <div className="flex flex-col md:flex-row md:items-center justify-center
         mt-2 py-10 md:py-20 px-5 border-t border-b">
-        <Quote data-sal="slide-right" data-sal-delay="500" className="md:mr-8 mb-8 md:mb-0" />
+        <Quote className="md:mr-8 mb-8 md:mb-0" />
         <div className="flex flex-col">
           <QuoteContent>
             Lawmatics is one of the few software that provides such a high level of
@@ -240,22 +234,14 @@ const HomePage = ({ data }) => (
     {/* CRM */}
     <Section>
       <div className="flex flex-col md:flex-row py-10 md:pt-20 items-center justify-center">
-        <div
-          data-sal="slide-right"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-          className="w-full md:w-1/2 flex items-center justify-center px-5">
+        <div className="w-full md:w-1/2 flex items-center justify-center px-5">
           <Img
             className="block mb-10 md:mb-0"
             style={{ width: 578 }}
             fluid={[data.followupImg.childImageSharp.fluid]}
             alt="Follow-up" />
         </div>
-        <div
-          data-sal="slide-left"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-          className="w-full md:w-1/2 flex flex-col px-6">
+        <div className="w-full md:w-1/2 flex flex-col px-6">
           <PreHeader>Attorney-client relationship management</PreHeader>
           <h2 className="leading-9 text-4xl mb-0 pb-5">
             Effortless follow-ups
@@ -282,11 +268,7 @@ const HomePage = ({ data }) => (
     <Section>
       <div className="flex flex-col md:flex-row py-10 md:pt-20 items-center justify-center
         flex-col-reverse">
-        <div
-          data-sal="slide-right"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-          className="w-full md:w-1/2 flex flex-col px-6">
+        <div className="w-full md:w-1/2 flex flex-col px-6">
           <PreHeader>Marketing Automation</PreHeader>
           <h2 className="leading-9 text-4xl mb-0 pb-5">
             Turn old business into <br className="hidden md:inline" />new business
@@ -312,11 +294,7 @@ const HomePage = ({ data }) => (
             <Arrow className="ml-2 fill-current" />
           </Link>
         </div>
-        <div
-          data-sal="slide-left"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-          className="w-full md:w-1/2 flex items-center justify-center px-5">
+        <div className="w-full md:w-1/2 flex items-center justify-center px-5">
           <Img
             className="block mb-10 md:mb-0"
             style={{ width: 520 }}
@@ -330,7 +308,7 @@ const HomePage = ({ data }) => (
     <Section>
       <div className="flex flex-col md:flex-row md:items-center justify-center
         mt-2 py-10 md:py-20 px-5 border-t border-b">
-        <Quote data-sal="slide-right" data-sal-delay="500" className="md:mr-8 mb-8 md:mb-0" />
+        <Quote className="md:mr-8 mb-8 md:mb-0" />
         <div className="flex flex-col">
           <QuoteContent>
             I just want to say again that you&apos;ve been exceptionally knowledgeable and helpful.
@@ -348,22 +326,14 @@ const HomePage = ({ data }) => (
     {/* INTAKE */}
     <Section>
       <div className="flex flex-col md:flex-row py-10 md:pt-20 items-center justify-center">
-        <div
-          data-sal="slide-right"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-          className="w-full md:w-1/2 flex items-center justify-center px-5">
+        <div className="w-full md:w-1/2 flex items-center justify-center px-5">
           <Img
             className="block mb-10 md:mb-0 lg:mt-16"
             style={{ width: 598 }}
             fluid={[data.clientIntakeImg.childImageSharp.fluid]}
             alt="Client Intake" />
         </div>
-        <div
-          data-sal="slide-left"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-          className="w-full md:w-1/2 flex flex-col px-6">
+        <div className="w-full md:w-1/2 flex flex-col px-6">
           <PreHeader>Client Intake</PreHeader>
           <h2 className="leading-9 text-4xl mb-0 pb-5">
             Automate your intake process and marketing efforts
@@ -392,11 +362,7 @@ const HomePage = ({ data }) => (
     <Section>
       <div className="flex flex-col md:flex-row py-10 md:pt-20 items-center justify-center
         flex-col-reverse">
-        <div
-          data-sal="slide-right"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-          className="w-full md:w-1/2 flex flex-col px-6">
+        <div className="w-full md:w-1/2 flex flex-col px-6">
           <PreHeader>Integrations</PreHeader>
           <h2 className="leading-9 text-4xl mb-0 pb-5">
             Partnering with industry <br className="hidden md:inline" />leading solutions
@@ -412,9 +378,6 @@ const HomePage = ({ data }) => (
           </Link>
         </div>
         <div
-          data-sal="slide-left"
-          data-sal-delay="300"
-          data-sal-easing="ease"
           className="w-full md:w-1/2 flex items-center justify-center px-5">
           <Img
             className="block mb-10 md:mb-0"
@@ -433,7 +396,7 @@ const HomePage = ({ data }) => (
         <div className="w-full border-t" />
       </div>
       <div className="flex flex-col md:flex-row md:items-center justify-center py-10 md:pt-10 px-5">
-        <Quote data-sal="slide-right" data-sal-delay="500" className="md:mr-8 mb-8 md:mb-0" />
+        <Quote className="md:mr-8 mb-8 md:mb-0" />
         <div className="flex flex-col">
           <QuoteContent>
             So very glad we invested in this program when we did. We are getting
