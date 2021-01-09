@@ -161,8 +161,8 @@ const Header = () => {
           </div>
         </TopBar>
         <div
-          className="w-full flex justify-center bg-white fixed
-            transition-all duration-200 ease-in z-0"
+          className={`w-full flex justify-center bg-white fixed
+            transition-all duration-200 ease-in z-0 header-${scrolled ? 'scrolled' : 'top'}`}
           style={{ height: scrolled ? smHeaderHeight : headerHeight,
             boxShadow: '0 -100px 0 100px white' }}>
           <HeaderDiv>
@@ -178,11 +178,18 @@ const Header = () => {
             </Togglebox>
             {isOpen ? (
               <Navbox
+                className="nav-open"
                 style={{ top: scrolled ? smHeaderHeight + topBarCurrentHeight
                   : headerHeight + topBarCurrentHeight }}>
                 <Nav />
               </Navbox>
-            ) : <Navbox style={{ top: -7 * headerHeight }}><Nav /></Navbox>}
+            ) : (
+              <Navbox
+                className="nav-closed"
+                style={{ top: -7 * headerHeight }}>
+                <Nav />
+              </Navbox>
+            )}
           </HeaderDiv>
         </div>
       </AnimatedContainer>

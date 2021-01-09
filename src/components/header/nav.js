@@ -4,12 +4,48 @@ import tw from 'tailwind.macro';
 
 import Link from '../link';
 
+const NavUL = styled.ul`
+  ${tw`flex flex-col md:flex-row w-full md:pl-4`}
+  li {
+    ${tw`flex flex-grow`}
+  }
+`;
+
+const NavLI = styled.li`
+  &.with-dropdown {
+    ${tw`flex flex-col`}
+
+    :hover .dropdown{
+      ${tw`flex`}
+    }
+    .dropdown {
+      ${tw`hidden flex-col absolute bg-white rounded`}
+      min-width: 160px;
+      padding-top: 50px;
+      
+      a {
+        ${tw`text-13 font-bold text-center w-full py-2 cursor-pointer`}
+        :hover {
+          ${tw`bg-boost-secondary-10`}
+        }
+      }
+
+      @media (max-width: 945px) {
+        ${tw`bg-boost-secondary-05`}
+      }
+
+      @media (max-width: 768px) {
+        ${tw`flex w-full relative bg-transparent pt-0`}
+      }
+    }
+  }
+`;
+
 const NavItem = styled(Link)`
   transition: all 200ms ease-in;
   ${tw`text-boost-secondary-70 font-bold relative whitespace-no-wrap
     no-underline z-10 md:mx-3 py-2 md:py-1 md:w-auto w-full
-    px-3 md:px-0 text-center rounded`}
-  font-size: 13px;
+    px-3 md:px-0 text-center rounded text-13`}
 
   :after {
     bottom: -10px;
@@ -33,8 +69,7 @@ const NavItem = styled(Link)`
   }
 
   @media (max-width: 768px) {
-    ${tw`hover:bg-boost-secondary-10`}
-    font-size: 16px;
+    ${tw`hover:bg-boost-secondary-10 text-16`}
     :after{ display: none; }
   }
 `;
@@ -48,14 +83,26 @@ const CTA = styled(Link)`
 const Nav = () => (
   <nav className="flex flex-col md:flex-row items-center justify-between
     w-full md:w-auto px-4 md:px-0 flex-grow">
-    <div className="flex flex-col md:flex-row w-full md:pl-4">
-      <NavItem to="/home">Home</NavItem>
-      <NavItem to="/features">Features</NavItem>
-      <NavItem to="/integrations">Integrations</NavItem>
-      <NavItem to="/pricing">Pricing</NavItem>
-      <NavItem to="/about-us">About Us</NavItem>
-      <NavItem to="/contact">Contact</NavItem>
-    </div>
+    <NavUL>
+      <NavLI><NavItem to="/home">Home</NavItem></NavLI>
+      <NavLI><NavItem to="/features">Features</NavItem></NavLI>
+      <NavLI><NavItem to="/integrations">Integrations</NavItem></NavLI>
+      <NavLI><NavItem to="/pricing">Pricing</NavItem></NavLI>
+      <NavLI><NavItem to="/about-us">About Us</NavItem></NavLI>
+      {/* // Dropdown template
+      <NavLI className="with-dropdown">
+        <NavItem to="/about-us">
+          About Us <span className="boosticon icon-arrow-down absolute ml-1" />
+        </NavItem>
+        <div className="dropdown">
+          <Link to="#">Link 1</Link>
+          <Link to="#">Link 2</Link>
+          <Link to="#">Link 3</Link>
+        </div>
+      </NavLI>
+      */}
+      <NavLI><NavItem to="/contact">Contact</NavItem></NavLI>
+    </NavUL>
     {/* Mobile */}
     <NavItem
       to="https://app.lawmatics.com"
